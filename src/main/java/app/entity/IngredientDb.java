@@ -11,8 +11,11 @@ import javax.persistence.Id;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Ingredient {
+public class IngredientDb {
     @Id
-    private String string;
+    private String name;
+    private String calories;
+    private String price;
+    private String photo;
 
 }

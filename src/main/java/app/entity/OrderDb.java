@@ -12,14 +12,11 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User {
+public class OrderDb {
     @Id
-    private String name;
-    private String surname;
-    private String username;
-    private String password;
-    private String email;
-    private String phone;
-    private String address;
-    private ArrayList<Integer>favoritePizza;
+    private UserDb userDb;
+    private ArrayList<PizzaDb> pizzaList;
+    private String status;
+    private String price;
+    private String data;
 }

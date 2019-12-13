@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Pizza {
+public class PizzaDb {
     @Id
     private  String Id;
     private  String name;
