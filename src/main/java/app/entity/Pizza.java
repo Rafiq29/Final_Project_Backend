@@ -7,13 +7,14 @@ import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 @Data
 @Entity
-@Table(name="PizzaDb")
+@Table(name = "PizzaDb")
 
-public class PizzaDb {
+public class Pizza {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     @NotBlank(message = "Name is required")
     private String name;
@@ -26,7 +27,7 @@ public class PizzaDb {
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
 
-    public PizzaDb() {
+    public Pizza() {
     }
 
     public String getName() {

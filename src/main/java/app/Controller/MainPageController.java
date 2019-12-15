@@ -9,7 +9,7 @@ This is test controller for Home Page
 @Controller
 public class MainPageController {
     @GetMapping
-    public String home () {
+    public String home() {
         return "home";
     }
 }

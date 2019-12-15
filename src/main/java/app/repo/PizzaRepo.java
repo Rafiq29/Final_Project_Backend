@@ -1,7 +1,7 @@
 package app.repo;
 
-import app.entity.PizzaDb;
+import app.entity.Pizza;
 import org.springframework.data.repository.CrudRepository;
 
-public interface PizzaRepo extends CrudRepository<PizzaDb,Long> {
+public interface PizzaRepo extends CrudRepository<Pizza, Long> {
 }

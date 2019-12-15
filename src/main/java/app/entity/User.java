@@ -8,11 +8,11 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
-@Table(name="userDb")
+@Table(name = "userDb")
 public class User {
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     @NotBlank(message = "Name is required")
     private String name;

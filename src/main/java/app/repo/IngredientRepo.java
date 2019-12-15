@@ -1,7 +1,7 @@
 package app.repo;
 
-import app.entity.IngredientsDb;
+import app.entity.Ingredient;
 import org.springframework.data.repository.CrudRepository;
 
-public interface IngredientRepo extends CrudRepository<IngredientsDb,Long> {
+public interface IngredientRepo extends CrudRepository<Ingredient, Long> {
 }

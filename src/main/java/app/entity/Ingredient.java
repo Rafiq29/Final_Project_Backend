@@ -4,10 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+
 @Data
 @Entity
 @Table(name="IngredientsDb")
-public class IngredientsDb {
+public class Ingredient {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int ID;
@@ -20,7 +21,7 @@ public class IngredientsDb {
     @NotBlank(message = "Photo is required")
     private String photo;
 
-    public IngredientsDb() {
+    public Ingredient() {
     }
 
     public String getName() {

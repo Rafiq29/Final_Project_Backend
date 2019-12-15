@@ -1,7 +1,7 @@
 package app.repo;
 
-import app.entity.OrderDb;
+import app.entity.Order;
 import org.springframework.data.repository.CrudRepository;
 
-public interface OrderRepo extends CrudRepository <OrderDb,Long> {
+public interface OrderRepo extends CrudRepository<Order, Long> {
 }
