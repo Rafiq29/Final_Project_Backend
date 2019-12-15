@@ -1,14 +1,21 @@
 package app.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name="IngredientsDb")
 public class IngredientsDb {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int ID;
+    @NotBlank(message = "Name is required")
     private String name;
+    @NotBlank(message = "Calories is required")
     private int calories;
+    @NotBlank(message = "Price is required")
     private String price;
+    @NotBlank(message = "Photo is required")
     private String photo;
 
     public IngredientsDb() {
