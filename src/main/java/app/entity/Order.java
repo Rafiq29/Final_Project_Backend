@@ -8,19 +8,25 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "OrderDb")
+@Table(name = "Order")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
+    @Column(name = "User")
     @NotBlank(message = "Delivery name is required")
     private String User;
+    @Column(name = "PizzaList")
     @NotBlank(message = "PizzaList is required")
     private String PizzaList;
+    @Column(name = "Status")
     @NotBlank(message = "Status is required")
     private String status;
+    @Column(name = "price")
     @NotBlank(message = "Price is required")
     private int price;
+    @Column(name = "date")
     @NotBlank(message = "Date is required")
     private String date;
 

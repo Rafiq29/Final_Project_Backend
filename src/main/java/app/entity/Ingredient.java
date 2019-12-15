@@ -7,17 +7,22 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
-@Table(name="IngredientsDb")
+@Table(name="Ingredients")
 public class Ingredient {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "ID")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int ID;
+    @Column(name = "name")
     @NotBlank(message = "Name is required")
     private String name;
+    @Column(name = "calories")
     @NotBlank(message = "Calories is required")
     private int calories;
+    @Column(name = "price")
     @NotBlank(message = "Price is required")
     private String price;
+    @Column(name = "photo")
     @NotBlank(message = "Photo is required")
     private String photo;
 

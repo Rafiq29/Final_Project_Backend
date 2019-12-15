@@ -10,20 +10,26 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "PizzaDb")
+@Table(name = "Pizza")
 
 public class Pizza {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
+    @Column(name = "name")
     @NotBlank(message = "Name is required")
     private String name;
+    @Column(name = "price")
     @NotBlank(message = "Price is required")
     private String price;
+    @Column(name = "size")
     @NotBlank(message = "Size is required")
     private String size;
+    @Column(name = "calories")
     @NotBlank(message = "Calories is required")
     private int calories;
+    @Column(name = "ingredients")
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
 
