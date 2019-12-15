@@ -1,7 +1,7 @@
 package app.repo;
 
-import app.entity.UserDb;
+import app.entity.User;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepo extends CrudRepository<UserDb,Long> {
+public interface UserRepo extends CrudRepository<User,Long> {
 }

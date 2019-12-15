@@ -1,8 +1,10 @@
 package app.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-
+@Data
 @Entity
 @Table(name="IngredientsDb")
 public class IngredientsDb {

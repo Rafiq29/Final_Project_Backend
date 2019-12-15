@@ -5,11 +5,13 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
+
+@Data
 @Entity
-@Table(name="UserDb")
-public class UserDb {
+@Table(name="userDb")
+public class User {
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int ID;
     @NotBlank(message = "Name is required")
@@ -27,7 +29,7 @@ public class UserDb {
     @NotBlank(message = "Address is required")
     private String address;
 
-    public UserDb() {
+    public User() {
     }
 
     public int getID() {
