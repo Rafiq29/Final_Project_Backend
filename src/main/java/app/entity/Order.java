@@ -14,9 +14,9 @@ public class Order {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
-    @Column(name = "User")
+    @Column(name = "Delivery")
     @NotBlank(message = "Delivery name is required")
-    private String User;
+    private String Delivery;
     @Column(name = "PizzaList")
     @NotBlank(message = "PizzaList is required")
     private String PizzaList;
@@ -31,7 +31,7 @@ public class Order {
     private String date;
 
     public String getUs() {
-        return User;
+        return Delivery;
     }
 
     public String getPizzaList() {

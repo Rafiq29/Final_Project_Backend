@@ -35,8 +35,15 @@ public class User {
     @NotBlank(message = "Address is required")
     private String address;
 
+    @Column(name = "FavoritePizza")
+    @NotBlank(message = "FavoritePizza is required")
+    private String favoritePizza;
+
     public User() {
     }
+
+    public String getFavoritePizza() {return favoritePizza; }
+
 
     public int getID() {
         return ID;

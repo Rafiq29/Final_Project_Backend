@@ -14,7 +14,7 @@ public class Pizza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
     @Column(name = "name")
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "User is required")
     private String name;
     @Column(name = "price")
     @NotBlank(message = "Price is required")
