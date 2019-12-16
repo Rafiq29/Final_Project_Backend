@@ -1,5 +1,6 @@
 package app.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Data
 @Entity
+@AllArgsConstructor
 @Table(name = "pizzaOrder")
 public class PizzaOrder {
     @Id
