@@ -1,9 +1,13 @@
 package app.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "pizza")
@@ -28,7 +32,9 @@ public class Pizza {
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
 
-    public Pizza() {}
+    @NotBlank(message = "Photo is required")
+
+    private String photo;
 
     public String getName() {
         return name;
