@@ -1,11 +1,17 @@
 package app.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+
+@NoArgsConstructor
 @Data
 @Entity
+@AllArgsConstructor
 @Table(name = "pizza")
 
 public class Pizza {
@@ -23,12 +29,14 @@ public class Pizza {
     private String size;
 
     @NotBlank(message = "Calories is required")
-    private int calories;
+    private double calories;
 
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
 
-    public Pizza() {}
+    @NotBlank(message = "Photo is required")
+
+    private String photo;
 
     public String getName() {
         return name;
@@ -42,7 +50,7 @@ public class Pizza {
         return size;
     }
 
-    public int getCalories() {
+    public double getCalories() {
         return calories;
     }
 

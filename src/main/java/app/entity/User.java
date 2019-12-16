@@ -2,14 +2,16 @@ package app.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+@NoArgsConstructor
 @Data
 @Entity
 @AllArgsConstructor
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -39,9 +41,6 @@ public class User {
 
     @NotBlank(message = "FavoritePizza is required")
     private String favoritePizza;
-
-    public User() {
-    }
 
     public String getFavoritePizza() {return favoritePizza; }
 
