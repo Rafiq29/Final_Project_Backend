@@ -12,12 +12,6 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    private List<User> getAllUser() {
-        List<User> users = new ArrayList<>();
-        userRepo.findAll().forEach(users::add);
-        return users;
-    }
-
     private void addUser(User user) {
         userRepo.save(user);
     }
@@ -33,5 +27,11 @@ public class UserService {
     private User getUser(int id) {
         Optional<User> optUser = userRepo.findById((long) id);
         return optUser.orElseGet(User::new);
+    }
+
+    private List<User> getAllUser() {
+        List<User> users = new ArrayList<>();
+        userRepo.findAll().forEach(users::add);
+        return users;
     }
 }
