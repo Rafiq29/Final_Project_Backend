@@ -22,6 +22,9 @@ public class Sous {
     @NotBlank(message = "Price is required")
     private int price;
 
+    @NotBlank(message = "Photo is required")
+    private String photo;
+
     public Sous() {}
 
     public int getId() {
@@ -38,5 +41,9 @@ public class Sous {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getPhoto() {
+        return photo;
     }
 }

@@ -10,8 +10,7 @@ This is test controller for Home Page
 @Controller
 public class MainPageController {
     @Autowired
-    public MainPageController() {
-    }
+    public MainPageController() {}
 
     @GetMapping
     public String home() {
