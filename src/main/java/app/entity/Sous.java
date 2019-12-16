@@ -1,18 +1,16 @@
 package app.entity;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@NoArgsConstructor
 @Data
 @Entity
-@Table(name="ingredients")
-public class Ingredient {
+@Table(name= "sous")
+public class Sous {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotBlank(message = "Name is required")
@@ -22,10 +20,16 @@ public class Ingredient {
     private int calories;
 
     @NotBlank(message = "Price is required")
-    private String price;
+    private int price;
 
     @NotBlank(message = "Photo is required")
     private String photo;
+
+    public Sous() {}
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -35,7 +39,7 @@ public class Ingredient {
         return calories;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 

@@ -1,10 +1,12 @@
 package app.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "pizzaOrder")
@@ -48,7 +50,5 @@ public class PizzaOrder {
         return date;
     }
 
-    public PizzaOrder() {
-    }
 
 }
