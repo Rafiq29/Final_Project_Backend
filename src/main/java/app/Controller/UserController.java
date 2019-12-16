@@ -3,12 +3,8 @@ package app.Controller;
 
 import app.entity.User;
 import app.repo.UserRepo;
-import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -18,19 +14,17 @@ public class UserController {
     private UserRepo userRepo;
 
     @PostMapping(path = ("/add"))
-    public String addNewUser (@RequestParam String name, String surname, String username,
-                              String password, String email, String phone, String address){
-        User user = new User();
-        user.setName(name);
-        user.setSurname(surname);
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setPhone(phone);
-        user.setAddress(address);
-        userRepo.save(user);
+    public String addNewUser(@RequestParam String name,
+                             @RequestParam String surname,
+                             @RequestParam String email,
+                             @RequestParam String phone,
+                             @RequestParam String address) {
+        User user = new User(name, surname, email, phone, address);
         return ("User added");
     }
 
-
+    @GetMapping(path = ("/all"))
+    public Iterable<User> getAll() {
+      return userRepo.findAll();
+    }
 }
