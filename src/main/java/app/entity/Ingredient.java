@@ -19,10 +19,10 @@ public class Ingredient {
     private String name;
 
     @NotBlank(message = "Calories is required")
-    private int calories;
+    private double calories;
 
     @NotBlank(message = "Price is required")
-    private String price;
+    private double price;
 
     @NotBlank(message = "Photo is required")
     private String photo;
@@ -31,11 +31,11 @@ public class Ingredient {
         return name;
     }
 
-    public int getCalories() {
+    public double getCalories() {
         return calories;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 

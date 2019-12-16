@@ -25,7 +25,7 @@ public class PizzaOrder {
     private String status;
 
     @NotBlank(message = "Price is required")
-    private int price;
+    private double price;
 
     @NotBlank(message = "Date is required")
     private String date;
@@ -42,7 +42,7 @@ public class PizzaOrder {
         return status;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
