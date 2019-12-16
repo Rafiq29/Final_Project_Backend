@@ -4,38 +4,36 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.List;
 
 @Data
 @Entity
-@Table(name = "Order")
-public class Order {
+@Table(name = "pizzaOrder")
+public class PizzaOrder {
     @Id
-    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
-    @Column(name = "Delivery")
+    private Long id;
+
     @NotBlank(message = "Delivery name is required")
-    private String Delivery;
-    @Column(name = "PizzaList")
+    private String delivery;
+
     @NotBlank(message = "PizzaList is required")
-    private String PizzaList;
-    @Column(name = "Status")
+    private String pizzaList;
+
     @NotBlank(message = "Status is required")
     private String status;
-    @Column(name = "price")
+
     @NotBlank(message = "Price is required")
     private int price;
-    @Column(name = "date")
+
     @NotBlank(message = "Date is required")
     private String date;
 
     public String getUs() {
-        return Delivery;
+        return delivery;
     }
 
     public String getPizzaList() {
-        return PizzaList;
+        return pizzaList;
     }
 
     public String getStatus() {
@@ -50,7 +48,7 @@ public class Order {
         return date;
     }
 
-    public Order() {
+    public PizzaOrder() {
     }
 
 }

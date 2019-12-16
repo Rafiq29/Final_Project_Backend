@@ -9,33 +9,32 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "user")
 public class User {
+
     @Id
-    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
-    @Column(name = "name")
+    private int id;
+
     @NotBlank(message = "Name is required")
     private String name;
-    @Column(name = "surname")
+
     @NotBlank(message = "Surname is required")
     private String surname;
-    @Column(name = "username")
+
     @NotBlank(message = "Username is required")
     private String username;
-    @Column(name = "password")
+
     @NotBlank(message = "Password is required")
     private String password;
-    @Column(name = "email")
+
     @NotBlank(message = "Email is required")
     private String email;
-    @Column(name = "phone")
+
     @NotBlank(message = "Phone is required")
     private String phone;
-    @Column(name = "address")
+
     @NotBlank(message = "Address is required")
     private String address;
 
-    @Column(name = "FavoritePizza")
     @NotBlank(message = "FavoritePizza is required")
     private String favoritePizza;
 
@@ -45,8 +44,8 @@ public class User {
     public String getFavoritePizza() {return favoritePizza; }
 
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
     public String getName() {

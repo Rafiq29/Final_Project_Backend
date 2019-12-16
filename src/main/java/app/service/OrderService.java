@@ -1,9 +1,7 @@
 package app.service;
 
-import app.entity.Order;
-import app.entity.User;
+import app.entity.PizzaOrder;
 import app.repo.OrderRepo;
-import app.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,26 +14,26 @@ public class OrderService {
     @Autowired
     private OrderRepo orderRepo;
 
-    private List<Order> getAllOrder() {
-        List<Order> orders = new ArrayList<>();
-        orderRepo.findAll().forEach(orders::add);
-        return orders;
+    private List<PizzaOrder> getAllOrder() {
+        List<PizzaOrder> pizzaOrders = new ArrayList<>();
+        orderRepo.findAll().forEach(pizzaOrders::add);
+        return pizzaOrders;
     }
 
-    private void addOrder(Order order) {
-        orderRepo.save(order);
+    private void addOrder(PizzaOrder pizzaOrder) {
+        orderRepo.save(pizzaOrder);
     }
 
     private void deleteOrderByID(int id) {
         orderRepo.deleteById((long) id);
     }
 
-    private void deleteOrder(Order order) {
-        orderRepo.delete(order);
+    private void deleteOrder(PizzaOrder pizzaOrder) {
+        orderRepo.delete(pizzaOrder);
     }
 
-    private Order getOrder(int id) {
-        Optional<Order> optOrder = orderRepo.findById((long) id);
-        return optOrder.orElseGet(Order::new);
+    private PizzaOrder getOrder(int id) {
+        Optional<PizzaOrder> optOrder = orderRepo.findById((long) id);
+        return optOrder.orElseGet(PizzaOrder::new);
     }
 }
