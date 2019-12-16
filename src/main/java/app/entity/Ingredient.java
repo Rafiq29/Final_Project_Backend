@@ -1,10 +1,12 @@
 package app.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name="ingredients")
@@ -24,8 +26,6 @@ public class Ingredient {
 
     @NotBlank(message = "Photo is required")
     private String photo;
-
-    public Ingredient() {}
 
     public String getName() {
         return name;
