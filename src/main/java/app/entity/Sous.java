@@ -17,10 +17,10 @@ public class Sous {
     private String name;
 
     @NotBlank(message = "Calories is required")
-    private int calories;
+    private double calories;
 
     @NotBlank(message = "Price is required")
-    private int price;
+    private double price;
 
     @NotBlank(message = "Photo is required")
     private String photo;
@@ -35,11 +35,11 @@ public class Sous {
         return name;
     }
 
-    public int getCalories() {
+    public double getCalories() {
         return calories;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

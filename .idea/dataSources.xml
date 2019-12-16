@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/pitza</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="PizzaApplication" uuid="b33926a6-cf26-4d15-854e-b83c4eef50e2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/cohbdufi</jdbc-url>
+    </data-source>
   </component>
 </project>

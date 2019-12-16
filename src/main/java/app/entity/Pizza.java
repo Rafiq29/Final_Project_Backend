@@ -27,7 +27,7 @@ public class Pizza {
     private String size;
 
     @NotBlank(message = "Calories is required")
-    private int calories;
+    private double calories;
 
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
@@ -48,7 +48,7 @@ public class Pizza {
         return size;
     }
 
-    public int getCalories() {
+    public double getCalories() {
         return calories;
     }
 
