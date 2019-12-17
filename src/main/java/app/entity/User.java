@@ -7,10 +7,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@NoArgsConstructor
+
 @Data
 @Entity
 @AllArgsConstructor
+//@NoArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -33,30 +34,4 @@ public class User {
     @NotBlank(message = "Address is required")
     private String address;
 
-
-
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
 }

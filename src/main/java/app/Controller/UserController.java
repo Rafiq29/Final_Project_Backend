@@ -19,9 +19,10 @@ public class UserController {
                              @RequestParam String email,
                              @RequestParam String phone,
                              @RequestParam String address) {
-        User user = new User(name, surname, email, phone, address);
+        User user = new User();
         return ("User added");
     }
+
 
     @GetMapping(path = ("/all"))
     public Iterable<User> getAll() {
