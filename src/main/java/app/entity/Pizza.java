@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 
 public class Pizza {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @NotBlank(message = "User is required")
