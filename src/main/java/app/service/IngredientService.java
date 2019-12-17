@@ -37,4 +37,5 @@ public class IngredientService {
         ingredientRepo.findAll().forEach(ingredients::add);
         return ingredients;
     }
+
 }

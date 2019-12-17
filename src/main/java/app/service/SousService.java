@@ -1,5 +1,4 @@
 package app.service;
-
 import app.entity.Sous;
 import app.repo.SousRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import java.util.Optional;
 public class SousService {
     @Autowired
     private SousRepo sousRepo;
-
 
     private void addSous(Sous sous) {
         sousRepo.save(sous);

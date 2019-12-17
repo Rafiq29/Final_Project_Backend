@@ -24,12 +24,6 @@ public class User {
     @NotBlank(message = "Surname is required")
     private String surname;
 
-    @NotBlank(message = "Username is required")
-    private String username;
-
-    @NotBlank(message = "Password is required")
-    private String password;
-
     @NotBlank(message = "Email is required")
     private String email;
 
@@ -39,10 +33,7 @@ public class User {
     @NotBlank(message = "Address is required")
     private String address;
 
-    @NotBlank(message = "FavoritePizza is required")
-    private String favoritePizza;
 
-    public String getFavoritePizza() {return favoritePizza; }
 
 
     public int getId() {
@@ -55,14 +46,6 @@ public class User {
 
     public String getSurname() {
         return surname;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public String getEmail() {

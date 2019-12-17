@@ -34,4 +34,5 @@ public class UserService {
         userRepo.findAll().forEach(users::add);
         return users;
     }
+
 }

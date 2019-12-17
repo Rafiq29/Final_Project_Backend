@@ -27,6 +27,9 @@ public class Sous {
     @NotBlank(message = "Photo is required")
     private String photo;
 
+    @NotBlank(message = "description")
+
+
     public Sous() {}
 
     public int getId() {
