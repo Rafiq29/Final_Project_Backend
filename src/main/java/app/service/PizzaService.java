@@ -11,9 +11,7 @@ import java.util.Optional;
 
 @Service
 public class PizzaService {
-    @Autowired
     private PizzaRepo pizzaRepo;
-
 
     private void addPizza(Pizza pizza) {
         pizzaRepo.save(pizza);

@@ -3,18 +3,19 @@ package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
 @Table(name="ingredients")
 public class Ingredient {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private int id;
 
     @NotBlank(message = "Name is required")
@@ -28,6 +29,16 @@ public class Ingredient {
 
     @NotBlank(message = "Photo is required")
     private String photo;
+
+    public Ingredient (String name,double calories,double price,String photo) {
+        this.name=name;
+        this.calories=calories;
+        this.price=price;
+        this.photo=photo;
+    }
+
+    public Ingredient() {
+    }
 
     public String getName() {
         return name;

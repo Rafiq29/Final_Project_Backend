@@ -5,7 +5,4 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class IngredientController {
-    @Autowired
-    public IngredientController() {
-    }
 }

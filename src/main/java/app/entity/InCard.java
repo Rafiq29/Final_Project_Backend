@@ -1,18 +1,21 @@
 package app.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+@AllArgsConstructor
 @Data
 @Entity
+@Table(name = "inCard")
 public class InCard {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private int id;
 
     @NotBlank(message = "Name is required")
@@ -26,6 +29,13 @@ public class InCard {
     @NotBlank(message = "Price is required")
     private double price;
 
+    public InCard (String name,String size,int count,String photo,double price) {
+        this.name=name;
+        this.size=size;
+        this.count=count;
+        this.photo=photo;
+        this.price=price;
+    }
     public InCard() {
     }
 

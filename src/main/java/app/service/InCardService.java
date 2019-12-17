@@ -1,9 +1,7 @@
 package app.service;
 
 import app.entity.InCard;
-import app.entity.InCard;
 import app.repo.InCardRepo;
-import app.repo.IngredientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +22,7 @@ public class InCardService {
         inCardRepo.deleteById((long) id);
     }
 
-    private void deleteInCard(InCard inCard) {
-        inCardRepo.delete(inCard);
-    }
+    private void deleteInCard(InCard inCard) { inCardRepo.delete(inCard); }
 
     private InCard getInCard(int id) {
         Optional<InCard> optInCard = inCardRepo.findById((long) id);
