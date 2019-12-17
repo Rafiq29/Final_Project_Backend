@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotBlank(message = "Name is required")
@@ -33,15 +33,30 @@ public class User {
     @NotBlank(message = "Address is required")
     private String address;
 
-    public User(@NotBlank(message = "Name is required") String name,
-                @NotBlank(message = "Surname is required") String surname,
-                @NotBlank(message = "Email is required") String email,
-                @NotBlank(message = "Phone is required") String phone,
-                @NotBlank(message = "Address is required") String address) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address;
     }
 }

@@ -14,12 +14,6 @@ public class OrderService {
     @Autowired
     private OrderRepo orderRepo;
 
-    private List<PizzaOrder> getAllOrder() {
-        List<PizzaOrder> pizzaOrders = new ArrayList<>();
-        orderRepo.findAll().forEach(pizzaOrders::add);
-        return pizzaOrders;
-    }
-
     private void addOrder(PizzaOrder pizzaOrder) {
         orderRepo.save(pizzaOrder);
     }
@@ -35,5 +29,11 @@ public class OrderService {
     private PizzaOrder getOrder(int id) {
         Optional<PizzaOrder> optOrder = orderRepo.findById((long) id);
         return optOrder.orElseGet(PizzaOrder::new);
+    }
+
+    private List<PizzaOrder> getAllOrder() {
+        List<PizzaOrder> pizzaOrders = new ArrayList<>();
+        orderRepo.findAll().forEach(pizzaOrders::add);
+        return pizzaOrders;
     }
 }

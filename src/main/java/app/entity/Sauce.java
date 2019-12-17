@@ -2,19 +2,17 @@ package app.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@NoArgsConstructor
 @Data
 @Entity
 @AllArgsConstructor
 @Table(name= "sous")
-public class Sauce {
+public class Sous {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotBlank(message = "Name is required")
@@ -29,4 +27,28 @@ public class Sauce {
     @NotBlank(message = "Photo is required")
     private String photo;
 
+    @NotBlank(message = "description")
+
+
+    public Sous() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getCalories() {
+        return calories;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
 }
