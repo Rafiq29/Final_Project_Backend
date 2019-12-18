@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 @Entity
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -34,4 +34,15 @@ public class User {
     @NotBlank(message = "Address is required")
     private String address;
 
+    public User(@NotBlank(message = "Name is required") String name,
+                @NotBlank(message = "Surname is required") String surname,
+                @NotBlank(message = "Email is required") String email,
+                @NotBlank(message = "Phone is required") String phone,
+                @NotBlank(message = "Address is required") String address) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+    }
 }

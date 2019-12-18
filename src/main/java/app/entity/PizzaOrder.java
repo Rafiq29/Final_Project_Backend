@@ -32,25 +32,15 @@ public class PizzaOrder {
     @NotBlank(message = "Date is required")
     private String date;
 
-    public String getUs() {
-        return delivery;
+    public PizzaOrder(@NotBlank(message = "Delivery name is required") String delivery,
+                      @NotBlank(message = "PizzaList is required") String pizzaList,
+                      @NotBlank(message = "Status is required") String status,
+                      @NotBlank(message = "Price is required") double price,
+                      @NotBlank(message = "Date is required") String date) {
+        this.delivery = delivery;
+        this.pizzaList = pizzaList;
+        this.status = status;
+        this.price = price;
+        this.date = date;
     }
-
-    public String getPizzaList() {
-        return pizzaList;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-
 }

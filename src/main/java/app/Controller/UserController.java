@@ -14,12 +14,7 @@ public class UserController {
     private UserRepo userRepo;
 
     @PostMapping(path = ("/add"))
-    public String addNewUser(@RequestParam String name,
-                             @RequestParam String surname,
-                             @RequestParam String email,
-                             @RequestParam String phone,
-                             @RequestParam String address) {
-        User user = new User();
+    public String addNewUser(@RequestParam User user) {
         return ("User added");
     }
 

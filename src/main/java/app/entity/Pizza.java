@@ -37,23 +37,17 @@ public class Pizza {
 
     private String photo;
 
-    public String getName() {
-        return name;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public String getIngredients() {
-        return ingredients;
+    public Pizza(@NotBlank(message = "User is required") String name,
+                 @NotBlank(message = "Price is required") String price,
+                 @NotBlank(message = "Size is required") String size,
+                 @NotBlank(message = "Calories is required") double calories,
+                 @NotBlank(message = "Ingredients is required") String ingredients,
+                 @NotBlank(message = "Photo is required") String photo) {
+        this.name = name;
+        this.price = price;
+        this.size = size;
+        this.calories = calories;
+        this.ingredients = ingredients;
+        this.photo = photo;
     }
 }

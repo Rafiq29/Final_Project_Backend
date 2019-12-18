@@ -29,19 +29,13 @@ public class Ingredient {
     @NotBlank(message = "Photo is required")
     private String photo;
 
-    public String getName() {
-        return name;
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getPhoto() {
-        return photo;
+    public Ingredient(@NotBlank(message = "Name is required") String name,
+                      @NotBlank(message = "Calories is required") double calories,
+                      @NotBlank(message = "Price is required") double price,
+                      @NotBlank(message = "Photo is required") String photo) {
+        this.name = name;
+        this.calories = calories;
+        this.price = price;
+        this.photo = photo;
     }
 }

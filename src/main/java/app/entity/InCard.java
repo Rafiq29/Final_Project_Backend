@@ -26,30 +26,15 @@ public class InCard {
     @NotBlank(message = "Price is required")
     private double price;
 
-    public InCard() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public double getPrice() {
-        return price;
+    public InCard(@NotBlank(message = "Name is required") String name,
+                  @NotBlank(message = "Size is required") String size,
+                  @NotBlank(message = "Count is required") int count,
+                  @NotBlank(message = "Photo is required") String photo,
+                  @NotBlank(message = "Price is required") double price) {
+        this.name = name;
+        this.size = size;
+        this.count = count;
+        this.photo = photo;
+        this.price = price;
     }
 }
