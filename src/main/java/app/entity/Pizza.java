@@ -24,14 +24,10 @@ public class Pizza {
     @NotBlank(message = "User is required")
     private String name;
 
-    @NotBlank(message = "Price is required")
     private double price;
 
     @NotBlank(message = "Size is required")
     private String size;
-
-    @NotBlank(message = "Calories is required")
-    private double calories;
 
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
@@ -39,10 +35,9 @@ public class Pizza {
     @NotBlank(message = "Photo is required")
     private String photo;
 
-    public Pizza(String name,double price,String size,double calories,String ingredients,String photo) {
+    public Pizza(String name,double price,String size,String ingredients,String photo) {
         this.name=name;
         this.price=price;
-        this.calories=calories;
         this.size=size;
         this.ingredients=ingredients;
         this.photo=photo;

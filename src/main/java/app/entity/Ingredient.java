@@ -20,18 +20,13 @@ public class Ingredient {
     @NotBlank(message = "Name is required")
     private String name;
 
-    @NotBlank(message = "Calories is required")
-    private double calories;
-
-    @NotBlank(message = "Price is required")
     private double price;
 
     @NotBlank(message = "Photo is required")
     private String photo;
 
-    public Ingredient (String name,double calories,double price,String photo) {
+    public Ingredient (String name,double price,String photo) {
         this.name=name;
-        this.calories=calories;
         this.price=price;
         this.photo=photo;
     }

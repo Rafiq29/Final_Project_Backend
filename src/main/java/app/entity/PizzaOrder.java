@@ -28,7 +28,6 @@ public class PizzaOrder {
     @NotBlank(message = "Status is required")
     private String status;
 
-    @NotBlank(message = "Price is required")
     private double price;
 
     @NotBlank(message = "Date is required")

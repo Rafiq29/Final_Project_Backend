@@ -21,10 +21,6 @@ public class Sauce {
     @NotBlank(message = "Name is required")
     private String name;
 
-    @NotBlank(message = "Calories is required")
-    private double calories;
-
-    @NotBlank(message = "Price is required")
     private double price;
 
     @NotBlank(message = "Photo is required")
@@ -33,9 +29,8 @@ public class Sauce {
     @NotBlank(message = "description")
     private String description;
 
-    public Sauce(String name,double calories,double price,String photo,String description) {
+    public Sauce(String name,double price,String photo,String description) {
         this.name=name;
-        this.calories=calories;
         this.price=price;
         this.photo=photo;
         this.description=description;
