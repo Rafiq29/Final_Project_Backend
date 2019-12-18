@@ -13,7 +13,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/incard")
 public class InCardController {
-
     @Autowired
     InCardRepo cardRepo;
 
