@@ -22,6 +22,13 @@ public class InCardController {
         return cardRepo.findById((long) card.getId());
     }
 
+    @GetMapping(path = ("/all"))
+    public Iterable<InCard> getAll() {
+        return cardRepo.findAll();
+    }
+
     @PostMapping(path = ("/add"))
-    public String addPizza (InCard card)
+    public String addPizza (InCard card){
+        return "Added";
+    }
 }
