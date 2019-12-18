@@ -22,13 +22,11 @@ public class InCard {
     @NotBlank(message = "Size is required")
     private String size;
 
-    @NotBlank(message = "Count is required")
     private int count;
 
     @NotBlank(message = "Photo is required")
     private String photo;
 
-    @NotBlank(message = "Price is required")
     private double price;
 
     public InCard (String name,String size,int count,String photo,double price) {
