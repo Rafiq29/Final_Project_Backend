@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
-
+@NoArgsConstructor
 @Table(name = "pizzaOrder")
 public class PizzaOrder {
     @Id
@@ -34,8 +34,6 @@ public class PizzaOrder {
     @NotBlank(message = "Date is required")
     private String date;
 
-    public PizzaOrder() {
-    }
 
     public PizzaOrder(String delivery,String pizzaList,String status,double price,String date)
     {
@@ -44,26 +42,6 @@ public class PizzaOrder {
         this.status=status;
         this.price=price;
         this.date=date;
-    }
-
-    public String getUs() {
-        return delivery;
-    }
-
-    public String getPizzaList() {
-        return pizzaList;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getDate() {
-        return date;
     }
 
 

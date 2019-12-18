@@ -43,9 +43,7 @@ public class PizzaApp {
         userRepo.save(new User("name2","surname2","email","phone","address"));
         userRepo.save(new User("name3","surname3","email3","phone3","address3"));
 
-        userRepo.deleteById(1);
-        Iterable<User> users=userRepo.findAll();
-        System.out.println(users);
+        userRepo.save(new User("Rafiq","Babayev","rafiq@gmail.com","Rafiq's phone","Rafiq's address"));
         return "true";
     }
 

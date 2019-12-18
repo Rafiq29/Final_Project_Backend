@@ -2,7 +2,6 @@ package app.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -38,21 +37,5 @@ public class Ingredient {
     }
 
     public Ingredient() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getPhoto() {
-        return photo;
     }
 }

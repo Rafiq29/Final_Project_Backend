@@ -41,23 +41,4 @@ public class Sauce {
         this.description=description;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
 }

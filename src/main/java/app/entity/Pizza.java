@@ -47,23 +47,4 @@ public class Pizza {
         this.ingredients=ingredients;
         this.photo=photo;
     }
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public double getCalories() {
-        return calories;
-    }
-
-    public String getIngredients() {
-        return ingredients;
-    }
 }
