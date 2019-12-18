@@ -36,21 +36,20 @@ public class PizzaApp {
 //        sauceRepo.save(new Sauce("name",123.0,0.3,"photo","description"));
 //    return "true";
 //    }
-    @Bean
-    public String AddUser(UserRepo userRepo) {
-        userRepo.save(new User("Name", "Surname", "email", "phone", "address"));
-
-        userRepo.save(new User("name2","surname2","email","phone","address"));
-        userRepo.save(new User("name3","surname3","email3","phone3","address3"));
-
-        userRepo.save(new User("Rafiq","Babayev","rafiq@gmail.com","Rafiq's phone","Rafiq's address"));
-        return "true";
-    }
-
-//    @Transactional
-//   @Bean
-//    String AddPizza(PizzaRepo pizzaRepo) {
-//        pizzaRepo.save(new Pizza("pizza",12.5,"Small",234.4, "ingredients","photo"));
+//    @Bean
+//    public String AddUser(UserRepo userRepo) {
+//        userRepo.save(new User("Name", "Surname", "email", "phone", "address"));
+//
+//        userRepo.save(new User("name2","surname2","email","phone","address"));
+//        userRepo.save(new User("name3","surname3","email3","phone3","address3"));
+//
+//        userRepo.save(new User("Rafiq","Babayev","rafiq@gmail.com","Rafiq's phone","Rafiq's address"));
 //        return "true";
 //    }
+
+   @Bean
+    String AddPizza(PizzaRepo pizzaRepo) {
+        pizzaRepo.save(new Pizza("pizza",12.5,"Small",234.4, "ingredients","photo"));
+        return "true";
+    }
 }
