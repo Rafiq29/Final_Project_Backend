@@ -23,7 +23,7 @@ public class OrderController {
 
     @GetMapping(path = ("/get"))
     public Optional<PizzaOrder> getById (PizzaOrder order){
-        return orderRepo.findById((long) order.getId());
+        return orderRepo.findById(order.getId());
     }
 
     @GetMapping(path = ("/all"))

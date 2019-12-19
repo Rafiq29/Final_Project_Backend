@@ -18,7 +18,7 @@ public class PizzaController {
 
     @GetMapping(path = ("/get"))
     public Optional<Pizza> getByName(Pizza pizza){
-        return pizzaRepo.findById((long) pizza.getId());
+        return pizzaRepo.findById( pizza.getId());
     }
 
     @GetMapping(path = ("/all"))

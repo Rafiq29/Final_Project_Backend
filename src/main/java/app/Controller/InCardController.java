@@ -18,7 +18,7 @@ public class InCardController {
 
     @GetMapping(path = ("/get"))
     public Optional<InCard> getById (InCard card) {
-        return cardRepo.findById((long) card.getId());
+        return cardRepo.findById(card.getId());
     }
 
     @GetMapping(path = ("/all"))

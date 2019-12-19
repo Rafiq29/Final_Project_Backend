@@ -33,5 +33,4 @@ public class Sauce {
         this.photo=photo;
         this.description=description;
     }
-
 }

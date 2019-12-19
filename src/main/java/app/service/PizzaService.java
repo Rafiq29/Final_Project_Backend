@@ -18,7 +18,7 @@ public class PizzaService {
     }
 
     private void deletePizzaByID(int id) {
-        pizzaRepo.deleteById((long) id);
+        pizzaRepo.deleteById( id);
     }
 
     private void deletePizza(Pizza pizza) {
@@ -26,7 +26,7 @@ public class PizzaService {
     }
 
     private Pizza getPizza(int id) {
-        Optional<Pizza> optPizza = pizzaRepo.findById((long) id);
+        Optional<Pizza> optPizza = pizzaRepo.findById( id);
         return optPizza.orElseGet(Pizza::new);
     }
 

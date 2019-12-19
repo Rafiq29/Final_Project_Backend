@@ -18,7 +18,7 @@ public class SauceController {
 
     @GetMapping(path = ("/get"))
     public Optional<Sauce> getByName (Sauce sauce){
-        return sauceRepo.findById((long) sauce.getId());
+        return sauceRepo.findById( sauce.getId());
     }
 
     @GetMapping(path = ("/all"))

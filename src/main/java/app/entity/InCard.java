@@ -1,12 +1,14 @@
 package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "inCard")
@@ -36,7 +38,4 @@ public class InCard {
         this.photo=photo;
         this.price=price;
     }
-
-    public InCard() { }
-
 }
