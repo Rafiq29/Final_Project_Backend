@@ -1,13 +1,9 @@
 package app.entity;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-
 
 @Data
 @Entity
@@ -28,6 +24,9 @@ public class PizzaOrder {
     @NotBlank(message = "Status is required")
     private String status;
 
+    @NotBlank(message = "Size is required")
+    private String size;
+
     private double price;
 
     @NotBlank(message = "Date is required")
@@ -42,6 +41,5 @@ public class PizzaOrder {
         this.price=price;
         this.date=date;
     }
-
 
 }

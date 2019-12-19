@@ -1,6 +1,6 @@
 package app.initial;
 
-import app.entity.Sauce;
+import app.entity.Sauces;
 import app.repo.SauceRepo;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ public class InitialSauce {
     }
 
     public void create () {
-        repo.save(new Sauce("Ketchup",0.70,"photo","description"));
+        repo.save(new Sauces("Ketchup",0.70,"photo"));
 
     }
 }

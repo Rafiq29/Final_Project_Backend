@@ -1,5 +1,5 @@
 package app.service;
-import app.entity.Sauce;
+import app.entity.Sauces;
 import app.repo.SauceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,25 +15,25 @@ public class SauceService {
     public SauceService() {
     }
 
-    public void addSauce(Sauce sauce) {
-        sauceRepo.save(sauce);
+    public void addSauce(Sauces sauces) {
+        sauceRepo.save(sauces);
     }
 
     public void deleteSauceByID(int id) {
         sauceRepo.deleteById((long) id);
     }
 
-    public void deleteSauce(Sauce sauce) {
-        sauceRepo.delete(sauce);
+    public void deleteSauce(Sauces sauces) {
+        sauceRepo.delete(sauces);
     }
 
-    public Sauce getSauce(int id) {
-        Optional<Sauce> optSous = sauceRepo.findById((long) id);
-        return optSous.orElseGet(Sauce::new);
+    public Sauces getSauce(int id) {
+        Optional<Sauces> optSous = sauceRepo.findById((long) id);
+        return optSous.orElseGet(Sauces::new);
     }
 
-    public List<Sauce> getAllSauce() {
-        List<Sauce> sauces = new ArrayList<>();
+    public List<Sauces> getAllSauce() {
+        List<Sauces> sauces = new ArrayList<>();
         sauceRepo.findAll().forEach(sauces::add);
         return sauces;
     }

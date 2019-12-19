@@ -16,23 +16,26 @@ public class InCard {
     @GenericGenerator(name= "increment", strategy= "increment")
     private int id;
 
-    @NotBlank(message = "Name is required")
-    private String name;
+    @NotBlank(message = "deliveryName is required")
+    private String deliveryName;
+
+    private String pizzasList;
 
     @NotBlank(message = "Size is required")
     private String size;
 
-    private int count;
+    private int pizzaCount;
 
     @NotBlank(message = "Photo is required")
     private String photo;
 
     private double price;
 
-    public InCard (String name,String size,int count,String photo,double price) {
-        this.name=name;
+    public InCard (String deliveryName,String pizzasList,String size, int pizzaCount, String photo, double price) {
+        this.deliveryName = deliveryName;
+        this.pizzasList=pizzasList;
         this.size=size;
-        this.count=count;
+        this.pizzaCount = pizzaCount;
         this.photo=photo;
         this.price=price;
     }

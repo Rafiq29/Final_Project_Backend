@@ -12,10 +12,4 @@ public class InitialPizza {
         this.repo = repo;
     }
 
-   public  void create () {
-        repo.save(new Pizza("Margarita",
-                123.0,"Small",
-                "Ingredients","photoUrl"));
-    }
-
 }
