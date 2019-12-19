@@ -20,7 +20,7 @@ public class SauceService {
     }
 
     public void deleteSauceByID(int id) {
-        sauceRepo.deleteById((long) id);
+        sauceRepo.deleteById( id);
     }
 
     public void deleteSauce(Sauces sauces) {
@@ -28,7 +28,7 @@ public class SauceService {
     }
 
     public Sauces getSauce(int id) {
-        Optional<Sauces> optSous = sauceRepo.findById((long) id);
+        Optional<Sauces> optSous = sauceRepo.findById( id);
         return optSous.orElseGet(Sauces::new);
     }
 

@@ -3,6 +3,7 @@ package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "veggies")
 public class Veggies {
     @Id
@@ -26,12 +28,7 @@ public class Veggies {
     private String veggiesName;
 
     private double price;
+
     @NotBlank(message = "veggiesPhoto is required")
     private String veggiesPhoto;
-
-    public Veggies (String veggiesName,double price,String veggiesPhoto) {
-        this.veggiesName=veggiesName;
-        this.price=price;
-        this.veggiesPhoto=veggiesPhoto;
-    }
 }

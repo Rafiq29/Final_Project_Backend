@@ -15,4 +15,6 @@ public class Size {
     @Id
     private int ID;
 
+    private String sizeName;
+
 }

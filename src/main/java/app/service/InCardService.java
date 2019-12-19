@@ -19,13 +19,13 @@ public class InCardService {
     }
 
     private void deleteInCardByID(int id) {
-        inCardRepo.deleteById((long) id);
+        inCardRepo.deleteById(id);
     }
 
     private void deleteInCard(InCard inCard) { inCardRepo.delete(inCard); }
 
     private InCard getInCard(int id) {
-        Optional<InCard> optInCard = inCardRepo.findById((long) id);
+        Optional<InCard> optInCard = inCardRepo.findById(id);
         return optInCard.orElseGet(InCard::new);
     }
 

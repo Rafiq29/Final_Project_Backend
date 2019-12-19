@@ -1,45 +1,38 @@
 package app.entity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Data
 @Entity
+@AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Table(name = "pizzaOrder")
 public class PizzaOrder {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
-    private Long id;
+    private int id;
 
-    @NotBlank(message = "Delivery name is required")
-    private String delivery;
-
-    @NotBlank(message = "PizzaList is required")
-    private String pizzaList;
+    @OneToMany(targetEntity = InCard.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="io_pk",referencedColumnName = "id")
+    private List<InCard> inCardList;
 
     @NotBlank(message = "Status is required")
     private String status;
 
-    @NotBlank(message = "Size is required")
-    private String size;
-
-    private double price;
-
     @NotBlank(message = "Date is required")
     private String date;
 
+    private String address;
 
-    public PizzaOrder(String delivery,String pizzaList,String status,double price,String date)
-    {
-        this.delivery=delivery;
-        this.pizzaList=pizzaList;
-        this.status=status;
-        this.price=price;
-        this.date=date;
-    }
+    private String phone;
 
+    private String email;
 }

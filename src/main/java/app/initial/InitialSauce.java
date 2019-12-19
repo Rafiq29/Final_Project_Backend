@@ -12,8 +12,4 @@ public class InitialSauce {
         this.repo = sauceRepo;
     }
 
-    public void create () {
-        repo.save(new Sauces("Ketchup",0.70,"photo"));
-
-    }
 }
