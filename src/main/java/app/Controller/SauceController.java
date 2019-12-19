@@ -1,7 +1,8 @@
 package app.Controller;
 
-import app.entity.Pizza;
-import app.repo.PizzaRepo;
+
+import app.entity.Sauce;
+import app.repo.SauceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,20 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-
 @RestController
-@RequestMapping("/pizza")
-public class PizzaController {
+@RequestMapping("/sauce")
+public class SauceController {
     @Autowired
-    PizzaRepo pizzaRepo;
+    SauceRepo sauceRepo;
 
     @GetMapping(path = ("/get"))
-    public Optional<Pizza> getByName(Pizza pizza){
-        return pizzaRepo.findById((long) pizza.getId());
+    public Optional<Sauce> getByName (Sauce sauce){
+        return sauceRepo.findById((long) sauce.getId());
     }
 
     @GetMapping(path = ("/all"))
-    public Iterable<Pizza> getAll (){
-        return pizzaRepo.findAll();
+    public Iterable<Sauce> getAll (){
+        return sauceRepo.findAll();
     }
 }

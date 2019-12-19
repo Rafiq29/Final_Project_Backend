@@ -3,6 +3,7 @@ package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -10,12 +11,12 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Data
 @Entity
-@AllArgsConstructor
 @Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private int id;
 
     @NotBlank(message = "Name is required")
@@ -23,12 +24,6 @@ public class User {
 
     @NotBlank(message = "Surname is required")
     private String surname;
-
-    @NotBlank(message = "Username is required")
-    private String username;
-
-    @NotBlank(message = "Password is required")
-    private String password;
 
     @NotBlank(message = "Email is required")
     private String email;
@@ -39,41 +34,13 @@ public class User {
     @NotBlank(message = "Address is required")
     private String address;
 
-    @NotBlank(message = "FavoritePizza is required")
-    private String favoritePizza;
-
-    public String getFavoritePizza() {return favoritePizza; }
-
-
-    public int getId() {
-        return id;
+    public User(String name,String surname,String email,String phone,String address) {
+        this.name=name;
+        this.surname=surname;
+        this.email=email;
+        this.phone=phone;
+        this.address=address;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
 }

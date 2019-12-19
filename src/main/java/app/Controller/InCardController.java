@@ -1,7 +1,7 @@
 package app.Controller;
 
-import app.entity.PizzaOrder;
-import app.repo.OrderRepo;
+import app.entity.InCard;
+import app.repo.InCardRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/order")
-public class OrderController {
+@RequestMapping("/incard")
+public class InCardController {
     @Autowired
-    OrderRepo orderRepo;
-
-    @PostMapping(path = ("/add"))
-    public String addOrder (PizzaOrder order){
-        return ("Order completed");
-    }
+    InCardRepo cardRepo;
 
     @GetMapping(path = ("/get"))
-    public Optional<PizzaOrder> getById (PizzaOrder order){
-        return orderRepo.findById((long) order.getId());
+    public Optional<InCard> getById (InCard card) {
+        return cardRepo.findById((long) card.getId());
     }
 
     @GetMapping(path = ("/all"))
-    public Iterable<PizzaOrder> getAll (){
-        return orderRepo.findAll();
+    public Iterable<InCard> getAll() {
+        return cardRepo.findAll();
+    }
+
+    @PostMapping(path = ("/add"))
+    public String addPizza (InCard card){
+        return "Added";
     }
 }
