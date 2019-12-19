@@ -31,5 +31,20 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="mpahlnmd@rajje.db.elephantsql.com" uuid="7bb610c5-b41d-4abf-8d35-5bcdd5085f33">
+      <database-info product="PostgreSQL" version="11.6 (Ubuntu 11.6-1.pgdg18.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.6" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>mpahlnmd</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

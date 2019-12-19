@@ -10,7 +10,7 @@
         <module name="Step_Project_Backend" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
+    <bytecodeTargetLevel target="13">
       <module name="Step_Project_Backend" target="1.8" />
     </bytecodeTargetLevel>
   </component>

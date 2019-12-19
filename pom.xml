@@ -36,7 +36,8 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-hibernate -->
+<!--
+        <!- https://mvnrepository.com/artifact/org.springframework/spring-hibernate -->
         <!-- getters / setters / eq / hc / constructors generator  -->
         <dependency>
             <groupId>org.projectlombok</groupId>

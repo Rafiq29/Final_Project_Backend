@@ -1,5 +1,6 @@
 package app.service;
 
+import app.entity.Ingredient;
 import app.repo.IngredientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

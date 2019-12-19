@@ -13,5 +13,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/cohbdufi</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="mpahlnmd@rajje.db.elephantsql.com" uuid="7bb610c5-b41d-4abf-8d35-5bcdd5085f33">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://rajje.db.elephantsql.com:5432/mpahlnmd</jdbc-url>
+    </data-source>
   </component>
 </project>
