@@ -6,11 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,5 +29,8 @@ public class Meats {
 
     @NotBlank(message = "meatPhoto is required")
     private String meatPhoto;
+
+    @OneToMany(mappedBy = "pizzaMeats",fetch = FetchType.EAGER)
+    private List<Pizza> pizzas;
 
 }

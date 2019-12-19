@@ -29,4 +29,7 @@ public class Sauces {
 
      private String saucePhoto;
 
+     @ManyToMany(mappedBy = "pizzaSauces")
+    private List<Pizza> pizzas;
+
 }

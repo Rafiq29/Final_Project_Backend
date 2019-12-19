@@ -25,17 +25,18 @@ public class Pizza {
     @NotBlank(message = "namePizza is required")
     private String pizzaName;
 
-     @ManyToMany(cascade = CascadeType.ALL)
-     @JoinColumn(name = "pizzaSauceID", referencedColumnName = "sauceID")
+     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+     @JoinTable(name = "PizzaWithSauce",joinColumns = @JoinColumn(name = "pizzaID"),
+             inverseJoinColumns = @JoinColumn(name = "sauceID"))
      private List<Sauces> pizzaSauces;
 
-     @ManyToMany(targetEntity = Meats.class,cascade = CascadeType.ALL)
-     @JoinColumn(name= "pm_pk",referencedColumnName = "id")
-     private List<Meats> pizzaMeats;
+     @ManyToOne(targetEntity = Meats.class,cascade = CascadeType.ALL)
+     @JoinColumn(name= "meatsID")
+     private Meats pizzaMeats;
 
-    @ManyToMany(targetEntity = Veggies.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="pv_pk",referencedColumnName = "id")
-    private List<Veggies> pizzaVeggies;
+    @ManyToOne(targetEntity = Veggies.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="veggiesID")
+    private Veggies pizzaVeggies;
 
     @NotBlank(message = "Photo is required")
     private String pizzaPhoto;
