@@ -18,21 +18,21 @@ public class PizzaOrder {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
-    private int id;
+    private int pOrderID;
 
-    @OneToMany(targetEntity = InCard.class,cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = InCard.class,cascade = CascadeType.ALL)
     @JoinColumn(name="io_pk",referencedColumnName = "id")
-    private List<InCard> inCardList;
+    private List<InCard> pOrderInCardList;
 
     @NotBlank(message = "Status is required")
-    private String status;
+    private String pOrderStatus;
 
     @NotBlank(message = "Date is required")
-    private String date;
+    private String pOrderDate;
 
-    private String address;
+    private String pOrderAddress;
 
-    private String phone;
+    private String pOrderPhone;
 
-    private String email;
+    private String pOrderEmail;
 }

@@ -22,12 +22,12 @@ public class Veggies {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
-    private int id;
+    private int veggiesID;
 
     @NotBlank(message = "veggiesName is required")
     private String veggiesName;
 
-    private double price;
+    private double veggiesPrice;
 
     @NotBlank(message = "veggiesPhoto is required")
     private String veggiesPhoto;

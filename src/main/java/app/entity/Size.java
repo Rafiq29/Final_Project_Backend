@@ -13,8 +13,10 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class Size {
     @Id
-    private int ID;
+    private int sizeID;
 
     private String sizeName;
+
+    private double sizeCoefficient;
 
 }

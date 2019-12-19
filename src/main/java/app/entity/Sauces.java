@@ -20,14 +20,13 @@ public class Sauces {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
-    private int id;
+    private int sauceID;
 
     @NotBlank(message = "Name is required")
-    private String name;
+    private String sauceName;
 
-    private double price;
+    private double saucePrice;
 
-    @NotBlank(message = "Photo is required")
-    private String photo;
+     private String saucePhoto;
 
 }
