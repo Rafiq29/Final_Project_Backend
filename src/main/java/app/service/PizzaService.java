@@ -11,16 +11,14 @@ import java.util.Optional;
 
 @Service
 public class PizzaService {
-    @Autowired
     private PizzaRepo pizzaRepo;
-
 
     private void addPizza(Pizza pizza) {
         pizzaRepo.save(pizza);
     }
 
     private void deletePizzaByID(int id) {
-        pizzaRepo.deleteById((long) id);
+        pizzaRepo.deleteById( id);
     }
 
     private void deletePizza(Pizza pizza) {
@@ -28,7 +26,7 @@ public class PizzaService {
     }
 
     private Pizza getPizza(int id) {
-        Optional<Pizza> optPizza = pizzaRepo.findById((long) id);
+        Optional<Pizza> optPizza = pizzaRepo.findById( id);
         return optPizza.orElseGet(Pizza::new);
     }
 

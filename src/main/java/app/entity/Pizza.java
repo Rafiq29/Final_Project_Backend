@@ -8,9 +8,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
-@AllArgsConstructor
+
 @Table(name = "pizza")
 
 public class Pizza {
@@ -22,32 +23,22 @@ public class Pizza {
     private String name;
 
     @NotBlank(message = "Price is required")
-    private String price;
+    private double price;
 
     @NotBlank(message = "Size is required")
     private String size;
-
-    @NotBlank(message = "Calories is required")
-    private double calories;
 
     @NotBlank(message = "Ingredients is required")
     private String ingredients;
 
     @NotBlank(message = "Photo is required")
-
     private String photo;
 
-    public Pizza(@NotBlank(message = "User is required") String name,
-                 @NotBlank(message = "Price is required") String price,
-                 @NotBlank(message = "Size is required") String size,
-                 @NotBlank(message = "Calories is required") double calories,
-                 @NotBlank(message = "Ingredients is required") String ingredients,
-                 @NotBlank(message = "Photo is required") String photo) {
-        this.name = name;
-        this.price = price;
-        this.size = size;
-        this.calories = calories;
-        this.ingredients = ingredients;
-        this.photo = photo;
+    public Pizza(String name,double price,String size,String ingredients,String photo) {
+        this.name=name;
+        this.price=price;
+        this.size=size;
+        this.ingredients=ingredients;
+        this.photo=photo;
     }
 }

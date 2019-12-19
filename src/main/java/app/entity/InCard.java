@@ -1,40 +1,41 @@
 package app.entity;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
+@Table(name = "inCard")
 public class InCard {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private int id;
 
     @NotBlank(message = "Name is required")
     private String name;
+
     @NotBlank(message = "Size is required")
     private String size;
-    @NotBlank(message = "Count is required")
+
     private int count;
+
     @NotBlank(message = "Photo is required")
     private String photo;
-    @NotBlank(message = "Price is required")
+
     private double price;
 
-    public InCard(@NotBlank(message = "Name is required") String name,
-                  @NotBlank(message = "Size is required") String size,
-                  @NotBlank(message = "Count is required") int count,
-                  @NotBlank(message = "Photo is required") String photo,
-                  @NotBlank(message = "Price is required") double price) {
-        this.name = name;
-        this.size = size;
-        this.count = count;
-        this.photo = photo;
-        this.price = price;
+    public InCard (String name,String size,int count,String photo,double price) {
+        this.name=name;
+        this.size=size;
+        this.count=count;
+        this.photo=photo;
+        this.price=price;
     }
 }

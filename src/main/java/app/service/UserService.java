@@ -2,6 +2,7 @@ package app.service;
 import app.entity.User;
 import app.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,24 +13,25 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    private void addUser(User user) {
+    public UserService() {
+    }
+
+    public void addUser(User user) {
         userRepo.save(user);
     }
 
-    private void deleteUserByID(int id) {
-        userRepo.deleteById((long) id);
-    }
+    public void deleteUserByID(int id) { userRepo.deleteById( id); }
 
-    private void deleteUser(User user) {
+    public void deleteUser(User user) {
         userRepo.delete(user);
     }
 
-    private User getUser(int id) {
-        Optional<User> optUser = userRepo.findById((long) id);
+    public User getUser(int id) {
+        Optional<User> optUser = userRepo.findById( id);
         return optUser.orElseGet(User::new);
     }
 
-    private List<User> getAllUser() {
+    public List<User> getAllUser() {
         List<User> users = new ArrayList<>();
         userRepo.findAll().forEach(users::add);
         return users;

@@ -20,7 +20,7 @@ public class IngredientService {
     }
 
     private void deleteIngredientByID(int id) {
-        ingredientRepo.deleteById((long) id);
+        ingredientRepo.deleteById(id);
     }
 
     private void deleteIngredient(Ingredient ingredient) {
@@ -28,7 +28,7 @@ public class IngredientService {
     }
 
     private Ingredient getIngredient(int id) {
-        Optional<Ingredient> optIngredient = ingredientRepo.findById((long) id);
+        Optional<Ingredient> optIngredient = ingredientRepo.findById(id);
         return optIngredient.orElseGet(Ingredient::new);
     }
 

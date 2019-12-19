@@ -3,19 +3,21 @@ package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@NoArgsConstructor
 @Data
 @Entity
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "pizzaOrder")
 public class PizzaOrder {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    private int id;
 
     @NotBlank(message = "Delivery name is required")
     private String delivery;
@@ -26,7 +28,6 @@ public class PizzaOrder {
     @NotBlank(message = "Status is required")
     private String status;
 
-    @NotBlank(message = "Price is required")
     private double price;
 
     @NotBlank(message = "Date is required")
@@ -35,7 +36,7 @@ public class PizzaOrder {
     public PizzaOrder(@NotBlank(message = "Delivery name is required") String delivery,
                       @NotBlank(message = "PizzaList is required") String pizzaList,
                       @NotBlank(message = "Status is required") String status,
-                      @NotBlank(message = "Price is required") double price,
+                      double price,
                       @NotBlank(message = "Date is required") String date) {
         this.delivery = delivery;
         this.pizzaList = pizzaList;
@@ -43,4 +44,5 @@ public class PizzaOrder {
         this.price = price;
         this.date = date;
     }
+
 }
