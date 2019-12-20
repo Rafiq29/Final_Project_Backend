@@ -1,10 +1,7 @@
 package app.service;
 
 import app.entity.Size;
-import app.entity.Veggies;
 import app.repo.SizeRepo;
-import app.repo.VeggiesRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,10 +10,12 @@ import java.util.Optional;
 
 @Service
 public class SizeService  {
-    @Autowired
-    private SizeRepo sizeRepo;
 
-    public SizeService() {}
+    private final SizeRepo sizeRepo;
+
+    public SizeService(SizeRepo sizeRepo) {
+        this.sizeRepo = sizeRepo;
+    }
 
     public void addSize(Size size) {
         sizeRepo.save(size);

@@ -18,8 +18,7 @@ import java.util.Set;
 @Table(name= "sauce")
 public class Sauces {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int sauceID;
 
     @NotBlank(message = "Name is required")

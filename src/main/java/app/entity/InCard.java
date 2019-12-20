@@ -14,8 +14,7 @@ import java.util.List;
 @Table(name = "inCard")
 public class InCard {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int inCardID;
 
     @ManyToMany(targetEntity = Pizza.class, cascade = CascadeType.ALL)

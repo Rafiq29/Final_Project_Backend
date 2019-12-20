@@ -14,8 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Size {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int sizeID;
 
     private String sizeName;

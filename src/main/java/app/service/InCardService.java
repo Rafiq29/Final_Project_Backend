@@ -2,7 +2,6 @@ package app.service;
 
 import app.entity.InCard;
 import app.repo.InCardRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,8 +10,12 @@ import java.util.Optional;
 
 @Service
 public class InCardService {
-    @Autowired
-    public InCardRepo inCardRepo;
+
+    private final InCardRepo inCardRepo;
+
+    public InCardService(InCardRepo inCardRepo) {
+        this.inCardRepo = inCardRepo;
+    }
 
     public void addInCard(InCard inCard) {
         inCardRepo.save(inCard);

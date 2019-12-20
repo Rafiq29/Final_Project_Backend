@@ -2,7 +2,6 @@ package app.Controller;
 
 import app.entity.Veggies;
 import app.service.VeggiesService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/veggies")
 public class VeggiesController {
-    @Autowired
-    VeggiesService service;
+
+    private final VeggiesService service;
+
+    public VeggiesController(VeggiesService service) {
+        this.service = service;
+    }
 
     @GetMapping(path = ("/get"))
     public Veggies getById (Veggies veggies) {

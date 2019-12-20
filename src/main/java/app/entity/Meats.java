@@ -18,8 +18,7 @@ import java.util.List;
 @Table(name = "meats")
 public class Meats {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int meatID;
 
     @NotBlank(message = "meatName is required")

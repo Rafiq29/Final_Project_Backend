@@ -1,7 +1,6 @@
 package app.service;
 import app.entity.Sauces;
 import app.repo.SauceRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +8,12 @@ import java.util.Optional;
 
 @Service
 public class SauceService {
-    @Autowired
-    private SauceRepo sauceRepo;
 
-    public SauceService() {}
+    private final SauceRepo sauceRepo;
+
+    public SauceService(SauceRepo sauceRepo) {
+        this.sauceRepo = sauceRepo;
+    }
 
     public void addSauce(Sauces sauces) {
         sauceRepo.save(sauces);

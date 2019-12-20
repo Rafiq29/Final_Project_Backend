@@ -16,8 +16,7 @@ import java.util.List;
 @Table(name = "pizzaOrder")
 public class PizzaOrder {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int pOrderID;
 
     @NotBlank(message = "Delivery name is required")

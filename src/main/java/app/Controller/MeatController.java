@@ -2,7 +2,6 @@ package app.Controller;
 
 import app.entity.Meats;
 import app.service.MeatService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +11,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/meats")
 public class MeatController {
-    @Autowired
-    MeatService service;
+
+    private final MeatService service;
+
+    public MeatController(MeatService service) {
+        this.service = service;
+    }
 
     @GetMapping(path = ("/get"))
     public Meats getById (Meats meats) {

@@ -2,7 +2,6 @@ package app.service;
 
 import app.entity.Meats;
 import app.repo.MeatRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,10 +10,12 @@ import java.util.Optional;
 
 @Service
 public class MeatService {
-    @Autowired
-    private MeatRepo meatRepo;
 
-    public MeatService() {}
+    private final MeatRepo meatRepo;
+
+    public MeatService(MeatRepo meatRepo) {
+        this.meatRepo = meatRepo;
+    }
 
     public void addMeat(Meats meats) {
         meatRepo.save(meats);

@@ -2,7 +2,6 @@ package app.service;
 
 import app.entity.Pizza;
 import app.repo.PizzaRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,7 +10,11 @@ import java.util.Optional;
 
 @Service
 public class PizzaService {
-    public PizzaRepo pizzaRepo;
+    private final PizzaRepo pizzaRepo;
+
+    public PizzaService(PizzaRepo pizzaRepo) {
+        this.pizzaRepo = pizzaRepo;
+    }
 
     public void addPizza(Pizza pizza) {
         pizzaRepo.save(pizza);
