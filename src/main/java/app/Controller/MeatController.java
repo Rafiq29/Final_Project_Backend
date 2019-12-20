@@ -24,15 +24,15 @@ public class MeatController {
         return service.getAllMeats();
     }
 
-    @PostMapping("/add")
+    @PostMapping
     public String addMeat (@RequestBody Meats meats){
         service.addMeat(meats);
         return "Added";
     }
 
-    @DeleteMapping("")
-    public String delete(@RequestBody Meats meats) {
-        service.deleteMeat(meats);
+    @DeleteMapping("/delete/{id}")
+    public String delete(@RequestBody int id) {
+        service.deleteByID(id);
         return "Deleted";
     }
 }

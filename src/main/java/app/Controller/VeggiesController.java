@@ -22,7 +22,7 @@ public class VeggiesController {
     }
 
     @GetMapping
-    public List<Veggies> getAll() {
+    public Iterable<Veggies> getAll() {
         return service.getAllVeggies();
     }
 
@@ -31,9 +31,9 @@ public class VeggiesController {
         service.addVeggies(veggies);
         return "Added";
     }
-    @DeleteMapping("")
-    public String delete(@RequestBody Veggies veggies) {
-        service.deleteVeggies(veggies);
+    @DeleteMapping("/delete/{id}")
+    public String delete(@PathVariable int id) {
+        service.deleteByID(id);
         return "Deleted";
     }
 }

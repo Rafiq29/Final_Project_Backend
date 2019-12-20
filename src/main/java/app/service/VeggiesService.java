@@ -29,6 +29,7 @@ public class VeggiesService {
         veggiesRepo.delete(veggies);
     }
 
+    public void deleteByID(int id) {veggiesRepo.deleteById(id);}
     public Veggies getVeggies(int id) {
         Optional<Veggies> optVeggies = veggiesRepo.findById( id);
         return optVeggies.orElseGet(Veggies::new);

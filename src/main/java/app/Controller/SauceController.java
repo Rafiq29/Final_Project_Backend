@@ -23,7 +23,7 @@ public class SauceController {
     }
 
     @GetMapping
-    public List<Sauces> getAll() {
+    public Iterable<Sauces> getAll() {
         return service.getAllSauce();
     }
 
@@ -31,5 +31,10 @@ public class SauceController {
     public String addSauce ( @RequestBody Sauces sauces){
         service.addSauce(sauces);
         return "Added";
+    }
+    @DeleteMapping("/delete/{id}")
+    public String delete(@RequestBody int id) {
+        service.deleteByID(id);
+        return "Deleted";
     }
 }

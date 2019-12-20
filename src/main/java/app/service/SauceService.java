@@ -26,6 +26,7 @@ public class SauceService {
     public void deleteSauce(Sauces sauces) {
         sauceRepo.delete(sauces);
     }
+    public void deleteByID(int id) {sauceRepo.deleteById(id);}
 
     public Sauces getSauce(int id) {
         Optional<Sauces> optSous = sauceRepo.findById( id);

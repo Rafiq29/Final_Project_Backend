@@ -27,6 +27,7 @@ public class PizzaService {
     public void deletePizza(Pizza pizza) {
         pizzaRepo.delete(pizza);
     }
+    public void deleteByID(int id) {pizzaRepo.deleteById(id);}
 
     public Pizza getPizza(int id) {
         Optional<Pizza> optPizza = pizzaRepo.findById( id);

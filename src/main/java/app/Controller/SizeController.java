@@ -22,7 +22,7 @@ public class SizeController {
     }
 
     @GetMapping
-    public List<Size> getAll() {
+    public Iterable<Size> getAll() {
         return service.getAllSize();
     }
 
@@ -30,5 +30,10 @@ public class SizeController {
     public String addSize ( @RequestBody Size size){
         service.addSize(size);
         return "Added";
+    }
+    @DeleteMapping("/delete/{id}")
+    public String delete(@RequestBody int id) {
+        service.deleteByID(id);
+        return "Deleted";
     }
 }

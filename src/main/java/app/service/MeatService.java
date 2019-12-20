@@ -29,6 +29,7 @@ public class MeatService {
         meatRepo.delete(meats);
     }
 
+    public void deleteByID(int id) {meatRepo.deleteById(id);}
     public Meats getMeat(int id) {
         Optional<Meats> optVMeats = meatRepo.findById( id);
         return optVMeats.orElseGet(Meats::new);

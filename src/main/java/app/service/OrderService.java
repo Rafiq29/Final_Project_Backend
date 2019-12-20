@@ -28,6 +28,7 @@ public class OrderService {
     public void deleteOrder(PizzaOrder pizzaOrder) {
         orderRepo.delete(pizzaOrder);
     }
+    public void deleteByID(int id) {orderRepo.deleteById(id);}
 
     public PizzaOrder getOrder(int id) {
         Optional<PizzaOrder> optOrder = orderRepo.findById( id);

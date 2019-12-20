@@ -1,6 +1,7 @@
 package app.Controller;
 
 import app.entity.InCard;
+import app.entity.Veggies;
 import app.service.InCardService;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class InCardController {
     }
 
     @GetMapping
-    public List<InCard> getAll() {
+    public Iterable<InCard> getAll() {
         return service.getAllInCards();
     }
 
@@ -30,4 +31,10 @@ public class InCardController {
     public String addInCard (@RequestBody InCard card){
         service.addInCard(card);
         return "Added";
-    }}
+    }
+    @DeleteMapping("/delete/{id}")
+    public String delete(@RequestBody int id) {
+        service.deleteByID(id);
+        return "Deleted";
+    }
+}

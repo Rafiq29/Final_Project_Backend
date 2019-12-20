@@ -28,6 +28,7 @@ public class SizeService  {
     public void deleteSize(Size size) {
         sizeRepo.delete(size);
     }
+    public void deleteByID(int id) {sizeRepo.deleteById(id);}
 
     public Size getSize(int id) {
         Optional<Size> optSize = sizeRepo.findById( id);

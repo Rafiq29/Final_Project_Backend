@@ -25,6 +25,8 @@ public class InCardService {
 
     public void deleteInCard(InCard inCard) { inCardRepo.delete(inCard); }
 
+    public void deleteByID(int id) {inCardRepo.deleteById(id);}
+
     public InCard getInCard(int id) {
         Optional<InCard> optInCard = inCardRepo.findById(id);
         return optInCard.orElseGet(InCard::new);
