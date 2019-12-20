@@ -11,8 +11,4 @@ public class InitialVeggies {
     public InitialVeggies(VeggiesRepo veggiesRepo) {
         this.veggiesRepo = veggiesRepo;
     }
-
-//    public void addVeggies () {
-//        veggiesRepo.save(new Veggies("pineapples",))
-//    }
 }

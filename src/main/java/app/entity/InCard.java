@@ -25,7 +25,7 @@ public class InCard {
 
     private int pizzaCount;
 
-    private double price;
+    private double orderPrice;
     public InCard() { }
 
 }

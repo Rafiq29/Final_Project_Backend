@@ -12,24 +12,22 @@ import java.util.Optional;
 @Service
 public class InCardService {
     @Autowired
-    private InCardRepo inCardRepo;
+    public InCardRepo inCardRepo;
 
-    private void addInCard(InCard inCard) {
+    public void addInCard(InCard inCard) {
         inCardRepo.save(inCard);
     }
 
-    private void deleteInCardByID(int id) {
-        inCardRepo.deleteById(id);
-    }
+    public void deleteInCardByID(int id) { inCardRepo.deleteById(id);}
 
-    private void deleteInCard(InCard inCard) { inCardRepo.delete(inCard); }
+    public void deleteInCard(InCard inCard) { inCardRepo.delete(inCard); }
 
-    private InCard getInCard(int id) {
+    public InCard getInCard(int id) {
         Optional<InCard> optInCard = inCardRepo.findById(id);
         return optInCard.orElseGet(InCard::new);
     }
 
-    private List<InCard> getAllInCards() {
+    public List<InCard> getAllInCards() {
         List<InCard> inCards = new ArrayList<>();
         inCardRepo.findAll().forEach(inCards::add);
         return inCards;

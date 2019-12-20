@@ -12,26 +12,26 @@ import java.util.Optional;
 @Service
 public class OrderService {
     @Autowired
-    private OrderRepo orderRepo;
+    public OrderRepo orderRepo;
 
-    private void addOrder(PizzaOrder pizzaOrder) {
+    public void addOrder(PizzaOrder pizzaOrder) {
         orderRepo.save(pizzaOrder);
     }
 
-    private void deleteOrderByID(int id) {
+    public void deleteOrderByID(int id) {
         orderRepo.deleteById( id);
     }
 
-    private void deleteOrder(PizzaOrder pizzaOrder) {
+    public void deleteOrder(PizzaOrder pizzaOrder) {
         orderRepo.delete(pizzaOrder);
     }
 
-    private PizzaOrder getOrder(int id) {
+    public PizzaOrder getOrder(int id) {
         Optional<PizzaOrder> optOrder = orderRepo.findById( id);
         return optOrder.orElseGet(PizzaOrder::new);
     }
 
-    private List<PizzaOrder> getAllOrder() {
+    public List<PizzaOrder> getAllOrder() {
         List<PizzaOrder> pizzaOrders = new ArrayList<>();
         orderRepo.findAll().forEach(pizzaOrders::add);
         return pizzaOrders;

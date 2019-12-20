@@ -11,26 +11,26 @@ import java.util.Optional;
 
 @Service
 public class PizzaService {
-    private PizzaRepo pizzaRepo;
+    public PizzaRepo pizzaRepo;
 
-    private void addPizza(Pizza pizza) {
+    public void addPizza(Pizza pizza) {
         pizzaRepo.save(pizza);
     }
 
-    private void deletePizzaByID(int id) {
+    public void deletePizzaByID(int id) {
         pizzaRepo.deleteById(id);
     }
 
-    private void deletePizza(Pizza pizza) {
+    public void deletePizza(Pizza pizza) {
         pizzaRepo.delete(pizza);
     }
 
-    private Pizza getPizza(int id) {
+    public Pizza getPizza(int id) {
         Optional<Pizza> optPizza = pizzaRepo.findById( id);
         return optPizza.orElseGet(Pizza::new);
     }
 
-    private List<Pizza> getAllPizza() {
+    public List<Pizza> getAllPizza() {
         List<Pizza> pizza = new ArrayList<>();
         pizzaRepo.findAll().forEach(pizza::add);
         return pizza;

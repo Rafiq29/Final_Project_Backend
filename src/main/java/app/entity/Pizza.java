@@ -41,6 +41,8 @@ public class Pizza {
     @JoinColumn(name="pizzaSizeID")
     private List<Size> pizzaSize;
 
+    private double pizzaPrice;
+
     @NotBlank(message = "Photo is required")
     private String pizzaPhoto;
 }

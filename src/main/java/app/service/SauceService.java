@@ -12,8 +12,7 @@ public class SauceService {
     @Autowired
     private SauceRepo sauceRepo;
 
-    public SauceService() {
-    }
+    public SauceService() {}
 
     public void addSauce(Sauces sauces) {
         sauceRepo.save(sauces);
