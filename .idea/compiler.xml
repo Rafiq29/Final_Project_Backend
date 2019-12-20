@@ -2,24 +2,20 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Final_Project_Backend" />
-        <module name="Step_Project_Backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="13">
       <module name="Final_Project_Backend" target="1.8" />
-      <module name="Step_Project_Backend" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Final_Project_Backend" options="-parameters" />
-      <module name="Step_Project_Backend" options="-parameters" />
     </option>
   </component>
 </project>

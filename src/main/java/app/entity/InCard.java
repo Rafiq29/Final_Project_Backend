@@ -1,41 +1,31 @@
 package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
+@ToString
 @Table(name = "inCard")
 public class InCard {
     @Id
     @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    private int id;
+    @GenericGenerator(name = "increment", strategy = "increment")
+    private int inCardID;
 
-    @NotBlank(message = "Name is required")
-    private String name;
+    @ManyToMany(targetEntity = Pizza.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "pizzaCard")
+    private List<Pizza> pizzasList;
 
-    @NotBlank(message = "Size is required")
-    private String size;
+    private int pizzaCount;
 
-    private int count;
+    private double orderPrice;
 
-    @NotBlank(message = "Photo is required")
-    private String photo;
-
-    private double price;
-
-    public InCard (String name,String size,int count,String photo,double price) {
-        this.name=name;
-        this.size=size;
-        this.count=count;
-        this.photo=photo;
-        this.price=price;
+    public InCard() {
     }
 }

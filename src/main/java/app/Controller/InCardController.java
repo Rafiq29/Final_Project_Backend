@@ -1,33 +1,34 @@
 package app.Controller;
 
 import app.entity.InCard;
-import app.repo.InCardRepo;
+import app.service.InCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/incard")
 public class InCardController {
     @Autowired
-    InCardRepo cardRepo;
+    InCardService service;
 
     @GetMapping(path = ("/get"))
-    public Optional<InCard> getById (InCard card) {
-        return cardRepo.findById(card.getId());
+    public InCard getById (InCard card) {
+        return service.getInCard(card.getInCardID());
     }
 
     @GetMapping(path = ("/all"))
-    public Iterable<InCard> getAll() {
-        return cardRepo.findAll();
+    public List<InCard> getAll() {
+        return service.getAllInCards();
     }
 
     @PostMapping(path = ("/add"))
     public String addPizza (InCard card){
+        service.addInCard(card);
         return "Added";
-    }
-}
+    }}
