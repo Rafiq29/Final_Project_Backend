@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Step_Project_Backend" />
+          <element id="module-output" name="Final_Project_Backend" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.0.3.RELEASE" />
@@ -47,7 +47,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/devcolibri-dataexam/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Step_Project_Backend/web/Web" />
+      <element id="javaee-facet-resources" facet="Final_Project_Backend/web/Web" />
     </root>
   </artifact>
 </component>

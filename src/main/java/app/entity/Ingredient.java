@@ -1,4 +1,5 @@
 package app.entity;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "inCard")
-public class InCard {
+@Table(name="ingredients")
+public class Ingredient {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
@@ -21,21 +22,14 @@ public class InCard {
     @NotBlank(message = "Name is required")
     private String name;
 
-    @NotBlank(message = "Size is required")
-    private String size;
-
-    private int count;
+    private double price;
 
     @NotBlank(message = "Photo is required")
     private String photo;
 
-    private double price;
-
-    public InCard (String name,String size,int count,String photo,double price) {
+    public Ingredient (String name,double price,String photo) {
         this.name=name;
-        this.size=size;
-        this.count=count;
-        this.photo=photo;
         this.price=price;
+        this.photo=photo;
     }
 }
