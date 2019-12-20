@@ -23,7 +23,7 @@ public class SizeController {
     }
 
     @PostMapping(path = ("/add"))
-    public String addPizza (Size size){
+    public String addSize (Size size){
         service.addSize(size);
         return "Added";
     }

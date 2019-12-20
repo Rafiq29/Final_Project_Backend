@@ -1,28 +1,35 @@
 package app.Controller;
 
 
-import app.entity.Sauce;
-import app.repo.SauceRepo;
+import app.entity.Sauces;
+import app.service.SauceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 @RequestMapping("/sauce")
 public class SauceController {
     @Autowired
-    SauceRepo sauceRepo;
+    SauceService service;
 
     @GetMapping(path = ("/get"))
-    public Optional<Sauce> getByName (Sauce sauce){
-        return sauceRepo.findById( sauce.getId());
+    public Sauces getById (Sauces sauces) {
+        return service.getSauce(sauces.getSauceID());
     }
 
     @GetMapping(path = ("/all"))
-    public Iterable<Sauce> getAll (){
-        return sauceRepo.findAll();
+    public List<Sauces> getAll() {
+        return service.getAllSauce();
+    }
+
+    @PostMapping(path = ("/add"))
+    public String addSauce (Sauces sauces){
+        service.addSauce(sauces);
+        return "Added";
     }
 }

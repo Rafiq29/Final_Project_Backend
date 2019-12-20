@@ -23,7 +23,7 @@ public class VeggiesController {
     }
 
     @PostMapping(path = ("/add"))
-    public String addPizza (Veggies veggies){
+    public String addVeggie (Veggies veggies){
         service.addVeggies(veggies);
         return "Added";
     }

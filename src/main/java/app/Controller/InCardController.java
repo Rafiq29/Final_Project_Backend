@@ -28,7 +28,7 @@ public class InCardController {
     }
 
     @PostMapping(path = ("/add"))
-    public String addPizza (InCard card){
+    public String addInCard (InCard card){
         service.addInCard(card);
         return "Added";
     }}
