@@ -19,7 +19,6 @@ public class InCard {
     @GenericGenerator(name= "increment", strategy= "increment")
     private int inCardID;
 
-
     @ManyToMany(targetEntity = Pizza.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "pizzaCard")
     private List<Pizza> pizzasList;
@@ -27,7 +26,6 @@ public class InCard {
     private int pizzaCount;
 
     private double price;
-
     public InCard() { }
 
 }
