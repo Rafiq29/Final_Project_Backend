@@ -2,10 +2,7 @@ package app.Controller;
 
 import app.entity.InCard;
 import app.service.InCardService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,17 +16,17 @@ public class InCardController {
         this.service = service;
     }
 
-    @GetMapping(path = ("/get"))
-    public InCard getById (InCard card) {
+    @GetMapping("/{id}")
+    public InCard getById (@PathVariable("id") InCard card) {
         return service.getInCard(card.getInCardID());
     }
 
-    @GetMapping(path = ("/all"))
+    @GetMapping
     public List<InCard> getAll() {
         return service.getAllInCards();
     }
 
-    @PostMapping(path = ("/add"))
+    @PostMapping
     public String addInCard (InCard card){
         service.addInCard(card);
         return "Added";

@@ -2,10 +2,7 @@ package app.Controller;
 
 import app.entity.Size;
 import app.service.SizeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,17 +16,17 @@ public class SizeController {
         this.service = service;
     }
 
-    @GetMapping(path = ("/get"))
-    public Size getById (Size size) {
+    @GetMapping("/{id}")
+    public Size getById (@PathVariable("id") Size size) {
         return service.getSize(size.getSizeID());
     }
 
-    @GetMapping(path = ("/all"))
+    @GetMapping
     public List<Size> getAll() {
         return service.getAllSize();
     }
 
-    @PostMapping(path = ("/add"))
+    @PostMapping
     public String addSize (Size size){
         service.addSize(size);
         return "Added";

@@ -2,10 +2,7 @@ package app.Controller;
 
 import app.entity.Pizza;
 import app.service.PizzaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,17 +17,17 @@ public class PizzaController {
         this.service = service;
     }
 
-    @GetMapping(path = ("/get"))
-    public Pizza getById (Pizza pizza) {
+    @GetMapping("/{id}")
+    public Pizza getById (@PathVariable("id") Pizza pizza) {
         return service.getPizza(pizza.getPizzaID());
     }
 
-    @GetMapping(path = ("/all"))
+    @GetMapping
     public List<Pizza> getAll() {
         return service.getAllPizza();
     }
 
-    @PostMapping(path = ("/add"))
+    @PostMapping
     public String addPizza (Pizza pizza){
         service.addPizza(pizza);
         return "Added";

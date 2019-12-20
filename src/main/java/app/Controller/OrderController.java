@@ -2,10 +2,7 @@ package app.Controller;
 
 import app.entity.PizzaOrder;
 import app.service.OrderService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,17 +16,17 @@ public class OrderController {
         this.service = service;
     }
 
-    @GetMapping(path = ("/get"))
-    public PizzaOrder getById (PizzaOrder order) {
+    @GetMapping("/{id}")
+    public PizzaOrder getById (@PathVariable("id") PizzaOrder order) {
         return service.getOrder((order.getPOrderID()));
     }
 
-    @GetMapping(path = ("/all"))
+    @GetMapping
     public List<PizzaOrder> getAll() {
         return service.getAllOrder();
     }
 
-    @PostMapping(path = ("/add"))
+    @PostMapping
     public String addOrder (PizzaOrder order){
         service.addOrder(order);
         return "Added";
