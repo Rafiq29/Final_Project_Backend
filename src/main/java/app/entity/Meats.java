@@ -30,7 +30,7 @@ public class Meats {
     @NotBlank(message = "meatPhoto is required")
     private String meatPhoto;
 
-    @OneToMany(mappedBy = "pizzaMeats",fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "pizzaMeats",fetch = FetchType.EAGER)
     private List<Pizza> pizzas;
 
 }

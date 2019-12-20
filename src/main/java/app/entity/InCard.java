@@ -19,22 +19,14 @@ public class InCard {
     @GenericGenerator(name= "increment", strategy= "increment")
     private int inCardID;
 
-    @NotBlank(message = "Delivery name is required")
-    private String deliveryName;
-
-    @NotBlank(message = "Delivery surname is required")
-    private String deliverySurname;
 
     @ManyToMany(targetEntity = Pizza.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "pc_pk",referencedColumnName = "id")
+    @JoinColumn(name = "pizzaCard")
     private List<Pizza> pizzasList;
-
-    @NotBlank(message = "Size is required")
-    private String pizzaSize;
 
     private int pizzaCount;
 
-    private double pizzaPrice;
+    private double price;
 
     public InCard() { }
 
