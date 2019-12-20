@@ -2,11 +2,11 @@ package app.Controller;
 
 import app.entity.Meats;
 import app.service.MeatService;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 @RestController
-@RequestMapping("/meats")
+@RequestMapping(value = "/meats")
 public class MeatController {
     private final MeatService service;
 
@@ -15,18 +15,24 @@ public class MeatController {
     }
 
     @GetMapping("/{id}")
-    public Meats getById (@PathVariable("id") Meats meats) {
-        return service.getMeat(meats.getMeatID());
+    public Meats getById (@PathVariable("id") int id) {
+        return service.getMeat(id);
     }
 
     @GetMapping
-    public List<Meats> getAll() {
+    public Iterable<Meats> getAll() {
         return service.getAllMeats();
     }
 
-    @PostMapping
-    public String addMeat (Meats meats){
+    @PostMapping("/add")
+    public String addMeat (@RequestBody Meats meats){
         service.addMeat(meats);
         return "Added";
+    }
+
+    @DeleteMapping("")
+    public String delete(@RequestBody Meats meats) {
+        service.deleteMeat(meats);
+        return "Deleted";
     }
 }

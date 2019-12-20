@@ -29,6 +29,4 @@ public class Veggies {
     @NotBlank(message = "veggiesPhoto is required")
     private String veggiesPhoto;
 
-    @ManyToMany(mappedBy = "pizzaVeggies",fetch = FetchType.EAGER)
-    private List<Pizza> pizzas;
 }

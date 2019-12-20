@@ -27,7 +27,7 @@ public class SizeController {
     }
 
     @PostMapping
-    public String addSize (Size size){
+    public String addSize ( @RequestBody Size size){
         service.addSize(size);
         return "Added";
     }

@@ -28,7 +28,7 @@ public class SauceController {
     }
 
     @PostMapping
-    public String addSauce (Sauces sauces){
+    public String addSauce ( @RequestBody Sauces sauces){
         service.addSauce(sauces);
         return "Added";
     }

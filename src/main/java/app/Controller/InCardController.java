@@ -27,7 +27,7 @@ public class InCardController {
     }
 
     @PostMapping
-    public String addInCard (InCard card){
+    public String addInCard (@RequestBody InCard card){
         service.addInCard(card);
         return "Added";
     }}

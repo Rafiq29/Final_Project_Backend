@@ -24,7 +24,5 @@ public class Size {
 
     private double sizeCoefficient;
 
-    @ManyToMany(mappedBy = "pizzaVeggies",fetch = FetchType.EAGER)
-    private List<Pizza> pizzas;
 
 }

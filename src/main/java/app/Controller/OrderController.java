@@ -27,7 +27,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public String addOrder (PizzaOrder order){
+    public String addOrder (@RequestBody PizzaOrder order){
         service.addOrder(order);
         return "Added";
     }
