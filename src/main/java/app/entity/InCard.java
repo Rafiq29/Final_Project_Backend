@@ -1,12 +1,14 @@
 package app.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
@@ -25,6 +27,4 @@ public class InCard {
 
     private double orderPrice;
 
-    public InCard() {
-    }
 }

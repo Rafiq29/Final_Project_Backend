@@ -8,7 +8,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/meats")
 public class MeatController {
-
     private final MeatService service;
 
     public MeatController(MeatService service) {

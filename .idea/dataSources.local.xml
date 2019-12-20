@@ -33,6 +33,7 @@
     </data-source>
     <data-source name="mpahlnmd@rajje.db.elephantsql.com" uuid="7bb610c5-b41d-4abf-8d35-5bcdd5085f33">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>mpahlnmd</user-name>
       <schema-mapping />
     </data-source>
   </component>
