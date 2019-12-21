@@ -15,17 +15,17 @@ import java.util.Set;
 @Data
 @Entity
 @ToString
-@Table(name= "sauce")
+@Table(name= "souce")
 public class Sauces {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int sauceID;
+    private int id;
 
     @NotBlank(message = "Name is required")
-    private String sauceName;
+    private String sauce;
 
-    private double saucePrice;
+    private double price;
 
-     private String saucePhoto;
+     private String photo;
 
 }

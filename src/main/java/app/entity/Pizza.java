@@ -18,29 +18,29 @@ public class Pizza {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pizzaID;
+    private int id;
 
     @NotBlank(message = "namePizza is required")
-    private String pizzaName;
+    private String pizza;
 
-     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+     @ManyToMany(targetEntity = Sauces.class,cascade = CascadeType.ALL)
      @JoinTable(name = "saucesID")
-     private List<Sauces> pizzaSauces;
+     private List<Sauces> sauces;
 
      @ManyToMany(targetEntity = Meats.class,cascade = CascadeType.ALL)
      @JoinColumn(name= "meatsID")
-     private List <Meats> pizzaMeats;
+     private List <Meats> meats;
 
     @ManyToMany(targetEntity = Veggies.class,cascade = CascadeType.ALL)
     @JoinColumn(name="veggiesID")
-    private List<Veggies> pizzaVeggies;
+    private List<Veggies> veggies;
 
     @ManyToMany(targetEntity = Size.class,cascade = CascadeType.ALL)
-    @JoinColumn(name="pizzaSizeID")
-    private List<Size> pizzaSize;
+    @JoinColumn(name="smallID")
+    private List<Size> size;
 
-    private double pizzaPrice;
+    private double price;
 
     @NotBlank(message = "Photo is required")
-    private String pizzaPhoto;
+    private String photo;
 }

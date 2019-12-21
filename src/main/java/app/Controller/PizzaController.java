@@ -4,6 +4,7 @@ import app.entity.Pizza;
 import app.service.PizzaService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 
@@ -19,7 +20,7 @@ public class PizzaController {
 
     @GetMapping("/{id}")
     public Pizza getById (@PathVariable("id") Pizza pizza) {
-        return service.getPizza(pizza.getPizzaID());
+        return service.getPizza(pizza.getId());
     }
 
     @GetMapping
@@ -28,7 +29,7 @@ public class PizzaController {
     }
 
     @PostMapping
-    public String addPizza (@RequestBody Pizza pizza){
+    public String addPizza (@RequestBody Collection<Pizza> pizza){
         service.addPizza(pizza);
         return "Added";
     }

@@ -1,10 +1,11 @@
 package app.service;
 
-import app.entity.InCard;
+import app.entity.Basket;
 import app.repo.InCardRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,24 +18,22 @@ public class InCardService {
         this.inCardRepo = inCardRepo;
     }
 
-    public void addInCard(InCard inCard) {
-        inCardRepo.save(inCard);
+    public void addInCard(Collection<Basket> basket) {
+        inCardRepo.saveAll(basket);
     }
 
-    public void deleteInCardByID(int id) { inCardRepo.deleteById(id);}
-
-    public void deleteInCard(InCard inCard) { inCardRepo.delete(inCard); }
+    public void deleteInCard(Basket basket) { inCardRepo.delete(basket); }
 
     public void deleteByID(int id) {inCardRepo.deleteById(id);}
 
-    public InCard getInCard(int id) {
-        Optional<InCard> optInCard = inCardRepo.findById(id);
-        return optInCard.orElseGet(InCard::new);
+    public Basket getInCard(int id) {
+        Optional<Basket> optInCard = inCardRepo.findById(id);
+        return optInCard.orElseGet(Basket::new);
     }
 
-    public List<InCard> getAllInCards() {
-        List<InCard> inCards = new ArrayList<>();
-        inCardRepo.findAll().forEach(inCards::add);
-        return inCards;
+    public List<Basket> getAllInCards() {
+        List<Basket> baskets = new ArrayList<>();
+        inCardRepo.findAll().forEach(baskets::add);
+        return baskets;
     }
 }

@@ -3,7 +3,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
 public class PizzaOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pOrderID;
+    private int id;
 
     @NotBlank(message = "Delivery name is required")
     private String deliveryName;
@@ -25,21 +25,19 @@ public class PizzaOrder {
     @NotBlank(message = "Delivery surname is required")
     private String deliverySurname;
 
-    @ManyToMany(targetEntity = InCard.class,cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Basket.class,cascade = CascadeType.ALL)
     @JoinColumn(name="pizzaOrder")
-    private List<InCard> pOrderInCardList;
+    private List<Basket> basket;
 
     @NotBlank(message = "Status is required")
-    private String pOrderStatus;
+    private String status;
 
     @NotBlank(message = "Date is required")
-    private String pOrderDate;
+    private String date;
 
-    private String pOrderAddress;
+    private String address;
 
-    private String pOrderPhone;
+    private String phone;
 
-    private String pOrderEmail;
-
-    private double allPrice;
+    private String email;
 }

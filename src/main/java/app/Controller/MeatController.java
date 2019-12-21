@@ -5,6 +5,8 @@ import app.service.MeatService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @RestController
 @RequestMapping(value = "/meats")
 public class MeatController {
@@ -25,7 +27,7 @@ public class MeatController {
     }
 
     @PostMapping
-    public String addMeat (@RequestBody Meats meats){
+    public String addMeat (@RequestBody Collection<Meats> meats){
         service.addMeat(meats);
         return "Added";
     }

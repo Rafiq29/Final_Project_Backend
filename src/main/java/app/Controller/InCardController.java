@@ -1,11 +1,10 @@
 package app.Controller;
 
-import app.entity.InCard;
-import app.entity.Veggies;
+import app.entity.Basket;
 import app.service.InCardService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/incard")
@@ -18,17 +17,17 @@ public class InCardController {
     }
 
     @GetMapping("/{id}")
-    public InCard getById (@PathVariable("id") InCard card) {
-        return service.getInCard(card.getInCardID());
+    public Basket getById (@PathVariable("id") Basket card) {
+        return service.getInCard(card.getId());
     }
 
     @GetMapping
-    public Iterable<InCard> getAll() {
+    public Iterable<Basket> getAll() {
         return service.getAllInCards();
     }
 
     @PostMapping
-    public String addInCard (@RequestBody InCard card){
+    public String addInCard (@RequestBody Collection<Basket> card){
         service.addInCard(card);
         return "Added";
     }

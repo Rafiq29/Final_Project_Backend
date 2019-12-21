@@ -4,6 +4,7 @@ import app.entity.PizzaOrder;
 import app.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class OrderController {
 
     @GetMapping("/{id}")
     public PizzaOrder getById (@PathVariable("id") PizzaOrder order) {
-        return service.getOrder((order.getPOrderID()));
+        return service.getOrder((order.getId()));
     }
 
     @GetMapping
@@ -27,7 +28,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public String addOrder (@RequestBody PizzaOrder order){
+    public String addOrder (@RequestBody Collection<PizzaOrder> order){
         service.addOrder(order);
         return "Added";
     }

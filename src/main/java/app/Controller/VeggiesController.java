@@ -5,6 +5,7 @@ import app.entity.Veggies;
 import app.service.VeggiesService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class VeggiesController {
 
     @GetMapping("/{id}")
     public Veggies getById (@PathVariable("id") Veggies veggies) {
-        return service.getVeggies(veggies.getVeggiesID());
+        return service.getVeggies(veggies.getId());
     }
 
     @GetMapping
@@ -27,7 +28,7 @@ public class VeggiesController {
     }
 
     @PostMapping
-    public String addVeggie (@RequestBody Veggies veggies){
+    public String addVeggie (@RequestBody Collection<Veggies> veggies){
         service.addVeggies(veggies);
         return "Added";
     }

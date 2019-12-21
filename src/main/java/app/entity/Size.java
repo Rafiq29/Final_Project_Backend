@@ -18,11 +18,11 @@ import java.util.List;
 public class Size {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int sizeID;
+    private int id;
 
-    private String sizeName;
+    private String name;
 
-    private double sizeCoefficient;
+    private double coefficient;
 
 
 }

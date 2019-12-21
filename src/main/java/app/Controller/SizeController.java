@@ -4,6 +4,7 @@ import app.entity.Size;
 import app.service.SizeService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class SizeController {
 
     @GetMapping("/{id}")
     public Size getById (@PathVariable("id") Size size) {
-        return service.getSize(size.getSizeID());
+        return service.getSize(size.getId());
     }
 
     @GetMapping
@@ -27,7 +28,7 @@ public class SizeController {
     }
 
     @PostMapping
-    public String addSize ( @RequestBody Size size){
+    public String addSize ( @RequestBody Collection<Size> size){
         service.addSize(size);
         return "Added";
     }

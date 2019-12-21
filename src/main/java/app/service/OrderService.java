@@ -5,6 +5,7 @@ import app.repo.OrderRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,13 +18,10 @@ public class OrderService {
         this.orderRepo = orderRepo;
     }
 
-    public void addOrder(PizzaOrder pizzaOrder) {
-        orderRepo.save(pizzaOrder);
+    public void addOrder(Collection<PizzaOrder> pizzaOrder) {
+        orderRepo.saveAll(pizzaOrder);
     }
 
-    public void deleteOrderByID(int id) {
-        orderRepo.deleteById( id);
-    }
 
     public void deleteOrder(PizzaOrder pizzaOrder) {
         orderRepo.delete(pizzaOrder);

@@ -5,6 +5,7 @@ import app.entity.Sauces;
 import app.service.SauceService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -19,7 +20,7 @@ public class SauceController {
 
     @GetMapping("/{id}")
     public Sauces getById (@PathVariable("id") Sauces sauces) {
-        return service.getSauce(sauces.getSauceID());
+        return service.getSauce(sauces.getId());
     }
 
     @GetMapping
@@ -28,7 +29,7 @@ public class SauceController {
     }
 
     @PostMapping
-    public String addSauce ( @RequestBody Sauces sauces){
+    public String addSauce ( @RequestBody Collection<Sauces> sauces){
         service.addSauce(sauces);
         return "Added";
     }

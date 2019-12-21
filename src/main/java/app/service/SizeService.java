@@ -5,8 +5,10 @@ import app.repo.SizeRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SizeService  {
@@ -17,13 +19,10 @@ public class SizeService  {
         this.sizeRepo = sizeRepo;
     }
 
-    public void addSize(Size size) {
-        sizeRepo.save(size);
+    public void addSize(Collection<Size> size) {
+        sizeRepo.saveAll(size.stream().map(s -> { s.setId(0); return s; }).collect(Collectors.toList()));
     }
 
-    public void deleteSizeByID(int id) {
-        sizeRepo.deleteById(id);
-    }
 
     public void deleteSize(Size size) {
         sizeRepo.delete(size);

@@ -5,8 +5,10 @@ import app.repo.VeggiesRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VeggiesService {
@@ -17,12 +19,8 @@ public class VeggiesService {
         this.veggiesRepo = veggiesRepo;
     }
 
-    public void addVeggies(Veggies veggies) {
-        veggiesRepo.save(veggies);
-    }
-
-    public void deleteVeggiesByID(int id) {
-        veggiesRepo.deleteById(id);
+    public void addVeggies(Collection<Veggies> veggies) {
+        veggiesRepo.saveAll(veggies.stream().map(v -> { v.setId(0); return v; }).collect(Collectors.toList()));
     }
 
     public void deleteVeggies(Veggies veggies) {

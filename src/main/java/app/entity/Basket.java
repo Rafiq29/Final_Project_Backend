@@ -13,18 +13,18 @@ import java.util.List;
 @Data
 @Entity
 @ToString
-@Table(name = "inCard")
-public class InCard {
+@Table(name = "Basket")
+public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int inCardID;
+    private int id;
 
     @ManyToMany(targetEntity = Pizza.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "pizzaCard")
-    private List<Pizza> pizzasList;
+    @JoinColumn(name = "pizzas")
+    private List<Pizza> pizzas;
 
-    private int pizzaCount;
+    private int count;
 
-    private double orderPrice;
+    private double price;
 
 }

@@ -3,8 +3,10 @@ import app.entity.Sauces;
 import app.repo.SauceRepo;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SauceService {
@@ -15,13 +17,10 @@ public class SauceService {
         this.sauceRepo = sauceRepo;
     }
 
-    public void addSauce(Sauces sauces) {
-        sauceRepo.save(sauces);
+    public void addSauce(Collection<Sauces> sauces) {
+        sauceRepo.saveAll(sauces.stream().map(s -> { s.setId(0); return s; }).collect(Collectors.toList()));
     }
 
-    public void deleteSauceByID(int id) {
-        sauceRepo.deleteById( id);
-    }
 
     public void deleteSauce(Sauces sauces) {
         sauceRepo.delete(sauces);

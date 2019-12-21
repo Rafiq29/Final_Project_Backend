@@ -19,14 +19,14 @@ import java.util.List;
 public class Veggies {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int veggiesID;
+    private int id;
 
     @NotBlank(message = "veggiesName is required")
-    private String veggiesName;
+    private String veggie;
 
-    private double veggiesPrice;
+    private double price;
 
     @NotBlank(message = "veggiesPhoto is required")
-    private String veggiesPhoto;
+    private String photo;
 
 }

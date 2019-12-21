@@ -2,11 +2,14 @@ package app.service;
 
 import app.entity.Pizza;
 import app.repo.PizzaRepo;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PizzaService {
@@ -16,13 +19,11 @@ public class PizzaService {
         this.pizzaRepo = pizzaRepo;
     }
 
-    public void addPizza(Pizza pizza) {
-        pizzaRepo.save(pizza);
+    public void addPizza(Collection<Pizza> pizza) {
+       pizzaRepo.saveAll(pizza);
+//       pizzaRepo.saveAll(pizza.stream().map(p -> { p.setId(0); return p; }).collect(Collectors.toList()));
     }
 
-    public void deletePizzaByID(int id) {
-        pizzaRepo.deleteById(id);
-    }
 
     public void deletePizza(Pizza pizza) {
         pizzaRepo.delete(pizza);

@@ -19,15 +19,15 @@ import java.util.List;
 public class Meats {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int meatID;
+    private int id;
 
     @NotBlank(message = "meatName is required")
-    private String meatName;
+    private String meat;
 
-    private double meatPrice;
+    private double price;
 
     @NotBlank(message = "meatPhoto is required")
-    private String meatPhoto;
+    private String Photo;
 
 
 }

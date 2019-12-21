@@ -5,8 +5,10 @@ import app.repo.MeatRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class MeatService {
@@ -17,12 +19,10 @@ public class MeatService {
         this.meatRepo = meatRepo;
     }
 
-    public void addMeat(Meats meats) {
-        meatRepo.save(meats);
-    }
-
-    public void deleteMeatsByID(int id) {
-        meatRepo.deleteById(id);
+    public void addMeat(Collection<Meats> meats) {
+        meatRepo.saveAll(
+                meats.stream().map(m -> { m.setId(0); return m; }).collect(Collectors.toList())
+        );
     }
 
     public void deleteMeat(Meats meats) {
